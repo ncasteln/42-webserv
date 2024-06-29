@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 12:40:12 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/06/28 14:40:28 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:04:13 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 #include <arpa/inet.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <string>
+#include <sstream>
 
 #define PORT "3490"  // the port users will be connecting to
 
@@ -130,10 +132,18 @@ int main(void)
             get_in_addr((struct sockaddr *)&their_addr),
             s, sizeof s);
         printf("server: got connection from %s\n", s);
-
+		std::string msg = "HI navid, How are you today?";
+		std::string http_header = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n";
+		std::stringstream ss;
+		ss << msg.length();
+		std::string msg_len = ss.str();
+		
+		http_header += "Content_length: " + msg_len + "\r\n\r\n";
         if (!fork()) { // this is the child process
             close(sockfd); // child doesn't need the listener
-            if (send(new_fd, "Hello, world!", 13, 0) == -1)
+			if (send(new_fd, http_header.c_str(), http_header.length(), 0) == -1)
+        		perror("send");
+            if (send(new_fd, msg.c_str(), msg.length(), 0) == -1)
                 perror("send");
             close(new_fd);
             exit(0);
