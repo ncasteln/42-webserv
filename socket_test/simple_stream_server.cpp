@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 12:40:12 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/07/01 14:35:48 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:22:10 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 #include <signal.h>
 #include <string>
 #include <sstream>
+# include "http.h"
 
 #define PORT "3490"  // the port users will be connecting to
 
@@ -64,6 +65,7 @@ int main(void)
     int yes=1;
     char s[INET6_ADDRSTRLEN];
     int rv;
+	t_http	http;
 
     memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC;
@@ -132,13 +134,21 @@ int main(void)
             get_in_addr((struct sockaddr *)&their_addr),
             s, sizeof s);
         printf("server: got connection from %s\n", s);
+		// http.HTTP_VERSION << "HTTP/1.1 "
+		// http.MSG_CODE << "200 OK\r\n"
+		// http.CONTENT_TYPE << "Content-Type: text/plain\r\n"
+		
 		std::string msg = "HI navid, How are you today?";
-		std::string http_header = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n";
+		// std::string http_header = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n";
+		std::string http_header = "HTTP/1.1 200 OK\nContent-Type: text/plain\n";
 		std::stringstream ss;
 		ss << msg.length();
 		std::string msg_len = ss.str();
 		
-		http_header += "Content_length: " + msg_len + "\r\n\r\n";
+		// http_header += "Content_length: " + msg_len + "\r\n\r\n";
+		http_header += "Content_length: " + msg_len + "\n\n";
+		// http.CONTENT_LENGTH << "Content_length: " + msg_len + "\r\n\r\n";
+		
         if (!fork()) { // this is the child process
             close(sockfd); // child doesn't need the listener
 			if (send(new_fd, http_header.c_str(), http_header.length(), 0) == -1)
@@ -153,3 +163,13 @@ int main(void)
 
     return 0;
 }
+
+/*HTTP/1.1 200 OK
+Server: nginx/1.27.0
+Date: Tue, 02 Jul 2024 18:21:32 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Tue, 28 May 2024 13:22:30 GMT
+Connection: keep-alive
+ETag: "6655da96-267"
+Accept-Ranges: bytes*/
