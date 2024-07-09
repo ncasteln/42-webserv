@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpServer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:43 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/01 09:55:50 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/07/09 00:48:37 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "Exception.hpp"
 # include "ListeningSocket.hpp"
 # include "ConnectedSocket.hpp"
+# include "../HttpRequest.hpp"
 
 class HttpServer {
 	private:

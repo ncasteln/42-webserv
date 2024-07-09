@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:24:40 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/07/01 09:57:42 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/07/09 00:30:19 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "webserv.h"
 #include "colors.h"
 #include "Http.hpp"
+#include "HttpRequest.hpp"
 #include "ListeningSocket.hpp"
 #include "ConnectedSocket.hpp"
 #include "HttpServer.hpp"

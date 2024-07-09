@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpServer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/01 09:55:43 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/07/09 00:43:04 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,9 @@ void HttpServer::acceptFirstRequestInQueue(void) {
 	this->_connectedSockets.push_back(connectedSocket);
 
 	std::cout << GREEN << "Connected socket with fd(" << connectedSocket.getSocketFd() << ") is created" << RESET << std::endl; 
-
+    
+	HTTPRequest httpRequest("");
+    httpRequest.handleRequest(connectedSocketFd);  // Handle the request
 	return;
 }
+
