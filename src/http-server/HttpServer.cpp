@@ -6,14 +6,14 @@
 /*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/07 12:16:06 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/07/12 09:20:25 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "HttpServer.hpp"
 
-HttpServer::HttpServer(void) : _listeningSocket(ListeningSocket()), _connectedSockets(std::map<int, ConnectedSocket>()), _maxIncomingConnections(10), _monitoredFdsNum(0), _monitoredFds(NULL), _request(std::map<std::string, std::string>()) {
+HttpServer::HttpServer(void) : _listeningSocket(ListeningSocket()), _connectedSockets(std::map<int, ConnectedSocket>()), _maxIncomingConnections(10), _monitoredFdsNum(0), _monitoredFds(NULL), _request(std::map<t_request, std::string>()) {
 
 	this->_monitoredFds = new struct pollfd[this->_maxIncomingConnections + 1];
 	memset(this->_monitoredFds, 0, sizeof(struct pollfd) * (this->_maxIncomingConnections + 1));
@@ -39,7 +39,7 @@ HttpServer::HttpServer(HttpServer const &other) : _listeningSocket(other._listen
 // 	return;
 // }
 
-HttpServer::HttpServer(unsigned int maxIncomingConnections, std::string const &ip, std::string const &port) : _listeningSocket(maxIncomingConnections, ip, port),  _connectedSockets(std::map<int, ConnectedSocket>()), _maxIncomingConnections(maxIncomingConnections), _monitoredFdsNum(0), _monitoredFds(NULL), _request(std::map<std::string, std::string>()) {
+HttpServer::HttpServer(unsigned int maxIncomingConnections, std::string const &ip, std::string const &port) : _listeningSocket(maxIncomingConnections, ip, port),  _connectedSockets(std::map<int, ConnectedSocket>()), _maxIncomingConnections(maxIncomingConnections), _monitoredFdsNum(0), _monitoredFds(NULL), _request(std::map<t_request, std::string>()) {
 
 	this->_monitoredFds = new struct pollfd[this->_maxIncomingConnections + 1];
 	memset(this->_monitoredFds, 0, sizeof(struct pollfd) * (this->_maxIncomingConnections + 1));
@@ -254,7 +254,6 @@ void HttpServer::startPoll2(void) {
 	return;
 }
 
-
 void HttpServer::handleEvents(void) {
 	try {
 		for (unsigned int i = 0; i < this->_monitoredFdsNum; i++)
@@ -312,14 +311,23 @@ void HttpServer::handleEventsOnConnectedSockets(unsigned int i) {
 			std::cout << "this->_monitoredFds[i].revents = "  << std::hex << "0x" << (this->_monitoredFds[i].revents) << std::dec << std::endl;
 			std::cout << "this->_monitoredFds[i].revents & POLLIN = "  << std::hex << "0x" << (this->_monitoredFds[i].revents & POLLIN) << std::dec << std::endl;
 			std::cout << "this->_monitoredFds[i].revents & POLOUT = "  << std::hex << "0x" << (this->_monitoredFds[i].revents & POLLOUT) << std::dec << std::endl;
+
+			std::cout << "GET request received" << std::endl;
 	try {
 		if (this->_monitoredFds[i].revents & POLLIN) {
 			char receive[20048];
 			receive[20047] = '\0';
 			ssize_t result = recv(this->_monitoredFds[i].fd, receive, sizeof(receive) - 1, 0);
 			std::cout << "received request:\n" << GREEN << receive << RESET << std::endl;
-			if (result == -1)
+			if (result <= 0)
+			{
+				close(this->_monitoredFds[i].fd);
+				this->_monitoredFdsNum--;
+				this->_connectedSockets.erase(this->_monitoredFds[i].fd);
 				throw Exception("Receive Failed", RECEIVE_FAILED);
+			}
+			else
+				receive[result] = '\0';
 			// close(this->_monitoredFds[i].fd);
 			// this->_monitoredFdsNum--;
 			this->parseRequest(static_cast<std::string>(receive));
@@ -327,7 +335,15 @@ void HttpServer::handleEventsOnConnectedSockets(unsigned int i) {
 
 		}
 
-		if (this->_monitoredFds[i].revents & POLLOUT) {
+		// if (this->_request[PATH] != "/")
+		// {
+		// 	std::cerr << RED << "NOT FOUND!!!!!!!" << RESET << std::endl;
+		// 	return;
+		// }
+
+		if ((this->_monitoredFds[i].revents & POLLOUT) && this->_request[METHOD] == "GET") {
+
+
 			std::cout << "sending the response\n";
 			std::string htmlContent = this->readHtmlFile("./src/index.html");
 			std::ostringstream ss;
@@ -341,7 +357,11 @@ void HttpServer::handleEventsOnConnectedSockets(unsigned int i) {
 			send(this->_monitoredFds[i].fd, ss.str().c_str(), size, 0);
 			close(this->_monitoredFds[i].fd);
 			this->_monitoredFdsNum--;
+			this->_connectedSockets.erase(this->_monitoredFds[i].fd);
+			std::cout << RED << "Socket fd [" << this->_monitoredFds[i].fd << "] is closed and out of the monitoring list" << RESET << std::endl;
 		}
+		else if ((this->_monitoredFds[i].revents & POLLOUT) && this->_request[METHOD] == "POST")
+			this->handlePost(i);
 		// else {
 		// 	throw Exception("Exception in connected socket!", EVENT_ERROR);
 		// }
@@ -376,16 +396,49 @@ void HttpServer::parseRequest(std::string request) {
 	// std::cout << "path = " << path << std::endl;
 	// std::cout << "httpVersion = " << httpVersion << std::endl;
 
-	this->_request["method"] = method;
-	this->_request["path"] = path;
-	this->_request["httpVersion"] = httpVersion;
+	this->_request[METHOD] = method;
+	this->_request[PATH] = path;
+	this->_request[HTTP_VERSION] = httpVersion;
 }
 
 void HttpServer::printRequest(void) {
-	std::map<std::string, std::string>::iterator iterator;
-	std::map<std::string, std::string>::iterator iteratorEnd = this->_request.end();
+	std::map<t_request, std::string>::iterator iterator;
+	std::map<t_request, std::string>::iterator iteratorEnd = this->_request.end();
 
 	for (iterator = this->_request.begin(); iterator != iteratorEnd; iterator++)
 		std::cout << iterator->first << " = " << iterator->second << std::endl;
+	return;
+}
+
+void HttpServer::handlePost(unsigned int i) {
+	std::cout << "POST request received:" << std::endl;
+	// char receive[20048];
+	// receive[20047] = '\0';
+	// recv(this->_monitoredFds[i].fd, receive, sizeof(receive) - 1, 0 );
+	std::ifstream fileStream("./src/received.html");
+	std::ostringstream htmlContent;
+
+	std::ostringstream ss;
+	
+
+	if (fileStream.is_open())
+	{
+		htmlContent	<< fileStream.rdbuf();
+		ss << "HTTP/1.1 200 OK\r\n";
+		ss << "Content-Type: text/html\r\n";
+		ss << "Content-Length:" << htmlContent.str().size() << "\r\n";
+		ss << "\r\n";
+		ss << htmlContent.str();
+	}
+
+
+	else
+		std::cerr << RED << "File not open!" << RESET << std::endl;
+
+	std::cout << "sending response to POST request" << std::endl;
+	send(this->_monitoredFds[i].fd, ss.str().c_str(), ss.str().size() , 0 );
+	close(this->_monitoredFds[i].fd);
+	this->_monitoredFdsNum--;
+	this->_connectedSockets.erase(this->_monitoredFds[i].fd);
 	return;
 }

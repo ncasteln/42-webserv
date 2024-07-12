@@ -6,7 +6,7 @@
 /*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:43 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/07 12:12:23 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/07/08 09:51:59 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # include "ListeningSocket.hpp"
 # include "ConnectedSocket.hpp"
 
+typedef enum e_request {
+	METHOD = 1,
+	PATH, // / - /example - /hello - 404
+	HTTP_VERSION,
+} t_request;
+
 class HttpServer {
 	private:
 		ListeningSocket _listeningSocket;
@@ -34,7 +40,7 @@ class HttpServer {
 		unsigned int _maxIncomingConnections;
 		unsigned int _monitoredFdsNum;
 		struct pollfd *_monitoredFds;
-		std::map<std::string, std::string> _request;
+		std::map<t_request, std::string> _request;
 
 		void handleEvents(void);
 		void handleEventsOnListeningSocket(unsigned int i);
@@ -43,6 +49,7 @@ class HttpServer {
 		std::string readHtmlFile(std::string path);
 		void parseRequest(std::string request);
 		void printRequest(void);
+		void handlePost(unsigned int i);
 	public:
 		HttpServer(void);
 		HttpServer(unsigned int maxIncomingConnections, std::string const &ip, std::string const &port);
