@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/12 15:49:09 by ncasteln         ###   ########.fr       */
+/*   Updated: 2024/07/15 19:39:34 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,7 +294,7 @@ void Server::handleEventsOnConnectedSockets(unsigned int i) {
 			std::ostringstream ss;
 			ss << "HTTP/1.1 200 OK\r\n";
 			ss << "Content-Type: text/html\r\n";
-			ss << "Content-Length:" << htmlContent.size() << "\r\n";
+			ss << "Content-Length: " << htmlContent.size() << "\r\n";
 			ss << "\r\n";
 			ss << htmlContent;
 			size_t size = ss.str().size();
