@@ -6,7 +6,7 @@
 /*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/16 00:58:20 by nnavidd          ###   ########.fr       */
+/*   Updated: 2024/07/17 09:00:15 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -318,6 +318,7 @@ void Server::handleEventsOnConnectedSockets(unsigned int i) {
 			// close(this->_monitoredFds[i].fd);
 			// this->_monitoredFdsNum--;
 			std::string response = _responses[this->_monitoredFds[i].fd];
+			std::cout << CYAN << response << std::endl;
 			// ss << response;
 			// ss << htmlContent;
             // Send the response
@@ -329,12 +330,12 @@ void Server::handleEventsOnConnectedSockets(unsigned int i) {
 
             // Remove the response from the map
             _responses.erase(this->_monitoredFds[i].fd);
-			std::cout << RED << response << RESET;
+			std::cout << RED << _responses[_monitoredFds[i].fd] << RESET;
 		}
 		// ->! to here
-		// else {
-		// 	throw Exception("Exception in connected socket!", EVENT_ERROR);
-		// }
+		else {
+			throw Exception("Exception in connected socket!", EVENT_ERROR);
+		}
 	}catch(Exception const &exception) {
 		throw exception;
 	}

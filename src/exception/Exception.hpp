@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Exception.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:25:05 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/07/09 16:18:54 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:33:50 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ class Exception : public std::exception {
 		enum server_err _error;
 };
 
+std::string generateETag(const std::string& filePath);
 #endif /* __EXCEPTION_HPP__ */

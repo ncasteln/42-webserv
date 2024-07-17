@@ -6,13 +6,19 @@
 /*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/07/16 00:53:00 by nnavidd          ###   ########.fr       */
+/*   Updated: 2024/07/16 23:02:42 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HttpRequest.hpp"
 
-HTTPRequest::HTTPRequest(std::map<std::string, std::string> serverConfig) : _serverConfig(serverConfig) {}
+HTTPRequest::HTTPRequest(std::map<std::string, std::string> serverConfig) :
+ _request(""),
+ _method(""),
+ _uri(""),
+ _version(""),
+ _body(""),
+ _serverConfig(serverConfig) {}
 
 bool HTTPRequest::isValidMethod(const std::string& mthd) {
 	return (mthd == "GET" || mthd == "POST" || mthd == "HEAD");
@@ -23,18 +29,15 @@ bool HTTPRequest::isValidHttpVersion(const std::string& ver) {
 }
 
 bool HTTPRequest::parse() {
-	std::istringstream requestStream(_request);
-	std::string line;
+	std::istringstream	requestStream(_request);
+	std::string			line;
 
 	// Parse request line
 	if (!std::getline(requestStream, line)) {
 		return false;
 	}
 	std::istringstream requestLine(line);
-	// std::cout <<  RED"output is: " RESET<< (requestLine >> _method >> _uri >> _version)<< std::endl;
-	// std::cout << RED << requestLine << BLUE << _method << RED << _uri << BLUE << _version << RESET<< std::endl;
 	if (!(requestLine >> _method >> _uri >> _version)) {
-		// std::cout << "HIIIIIIIIII\n";
 		return false;
 	}
 
@@ -48,7 +51,6 @@ bool HTTPRequest::parse() {
 	//     std::ofstream outFile("navid");
 	// while (std::getline(streamTest, stringTest)){
 	// 	std::cout  << ORG << stringTest << RESET<< std::endl;
-
     //     // Manually escape special characters
 	// 	if (outFile.is_open()) {
 	// 		for (std::string::size_type i = 0; i < stringTest.size(); ++i) {
@@ -81,7 +83,10 @@ bool HTTPRequest::parse() {
     // outFile.close();
 	// exit(1);
 	
-	
+	_headers["method"] = _method;
+	_headers["uri"] = _uri;
+	_headers["version"] = _version;
+
 	// Parse headers
 	while (std::getline(requestStream, line) && line != "\r") {
 		size_t pos = line.find(":");
@@ -93,18 +98,16 @@ bool HTTPRequest::parse() {
 			_headers[key] = value;
 		}
 	}
+
+	std::cout << ORG "parse headers as below:\n" << RESET;
 	std::map<std::string, std::string>::iterator itr = _headers.begin();
 	for(; itr != _headers.end(); itr++)
-		std::cout << ORG << itr->first << ":" BLUE << itr->second << RESET << std::endl;
+		std::cout << MAGENTA << itr->first << ":" BLUE << itr->second << RESET << std::endl;
 
+	std::cout << ORG "parse server config as below:\n" << RESET;
 	std::map<std::string, std::string>::iterator itrr = _serverConfig.begin();
 	for(; itrr != _serverConfig.end(); itrr++)
-		std::cout << MAGENTA << itrr->first << "--->" ORG << itrr->second << RESET << std::endl; 
-
-	//parsing the post 
-	if (_method == "POST") {
-        std::getline(requestStream, _body);
-    }
+		std::cout << MAGENTA << itrr->first << "--->" ORG << itrr->second << RESET << std::endl;
 
 	return true;
 }
@@ -119,13 +122,15 @@ int HTTPRequest::validate() {
 std::string HTTPRequest::getResponse() {
 	int statusCode = validate();
 
-	std::cout << BLUE << _method << RESET << std::endl;
     if (statusCode != 200) {
         return httpStatusCode(400) + "Content-Type: text/html\r\n\r\n<html><body><h1>Bad Request</h1></body></html>";
     }
 
+	if (_serverConfig.find("If-None-Match: ") != _serverConfig.end()) {
+		return httpStatusCode(304);
+	}
 
-    if (_method == "GET") {
+    if (_method == "GET" || _method == "HEAD") {
         return handleGet();
     } else if (_method == "POST") {
         return handlePost();
@@ -138,19 +143,27 @@ std::string HTTPRequest::getResponse() {
 
 std::string HTTPRequest::handleGet() {
 	std::ostringstream headers;
-	if (_uri == "/" || _uri == "/index.html")
+	if (_uri == "/" || _uri == "/index.html" || _uri == "/favicon.ico")
 	{
 		std::cout << RED "inside Get ......." RESET << std::endl;
-		std::string readHtml = readHtmlFile("./src/index.html");
+		std::string path = "./src/index.html";
+		std::string readHtml = readHtmlFile(path);
+
+		std::string strETag = generateETag(path);
+
 		headers << httpStatusCode(200);
 		headers << "Server: " + _serverConfig["server_name"];
 		headers << "\r\nContent-Type: text/html\r\n";
-		headers << "Content-Length: " << readHtml.size() << "\r\n\r\n";
+		headers << "Content-Length: " << readHtml.size() << "\r\n";
+		headers << "ETag: " << strETag << "\r\n";
+		headers << "Accept-Ranges: bytes\r\n\r\n";
 		headers << readHtml;
+    	return headers.str();
 	}
+	else
+		return (std::string(STATUS_400));
     // Placeholder implementation
     // return httpStatusCode(200) + "Content-Type: text/html\r\n\r\n<html><body><h1>GET Request Received</h1></body></html>";
-    return headers.str();
 }
 
 std::string HTTPRequest::handlePost() {
@@ -165,11 +178,12 @@ std::string HTTPRequest::handleDelete() {
 
 std::string HTTPRequest::httpStatusCode(int statusCode) {
     switch (statusCode) {
-        case 200: return "HTTP/1.1 200 OK\r\n";
-        case 400: return "HTTP/1.1 400 Bad Request\r\n";
-        case 404: return "HTTP/1.1 404 Not Found\r\n";
-        case 405: return "HTTP/1.1 405 Method Not Allowed\r\n";
-        default: return "HTTP/1.1 500 Internal Server Error\r\n";
+        case 200: return (std::string(STATUS_200));
+        case 400: return (std::string(STATUS_400));
+        case 404: return (std::string(STATUS_404));
+        case 405: return (std::string(STATUS_405));
+		case 304: return (std::string(STATUS_304));
+        default: return (std::string(STATUS_500));
     }
 }
 
@@ -183,7 +197,7 @@ void HTTPRequest::handleRequest(int clientSocket) {
     }
     buffer[bytesRead] = '\0';
     _request = buffer;
-	std::cout << ORG "received request:\n" << CYAN << _request << RESET << std::endl;
+	// std::cout << ORG "received request as below headers:\n" << CYAN << buffer << RESET << std::endl;
 
     if (!parse()) {
         std::string response = "HTTP/1.1 400 Bad Request\r\nContent-Type: text/html\r\n\r\n<html><body><h1>Bad Request</h1></body></html>";
@@ -201,10 +215,24 @@ std::string HTTPRequest::readHtmlFile(std::string path) {
 	if (fileStream.is_open())
 		std::cout << "file is open\n";
 	else{
-		perror("error:");
+		perror("error:"); //check if the error method is addmited
 		return ("");
 	}
 	std::ostringstream ss;
 	ss << fileStream.rdbuf();
 	return ss.str();
+}
+
+std::string generateETag(const std::string& filePath) {
+    struct stat fileInfo;
+
+    if (stat(filePath.c_str(), &fileInfo) != 0) {
+        std::cerr << "Error getting file information: " << filePath << std::endl; //check if the error method is addmited
+        return "";
+    }
+
+    std::ostringstream etag;
+    etag << "\"" << fileInfo.st_mtime << "-" << fileInfo.st_size << "\"";
+
+    return etag.str();
 }

@@ -6,7 +6,7 @@
 /*   By: nnavidd <nnavidd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 02:33:30 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/07/16 00:30:49 by nnavidd          ###   ########.fr       */
+/*   Updated: 2024/07/16 16:44:54 by nnavidd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "colors.h"
 # include "errors.h"
 # include "../exception/Exception.hpp"
+# include "HttpStatus.hpp"
 # include "../parsing/HttpConf.hpp"
 
 #include <string>
@@ -32,6 +33,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <fstream>
+#include <sys/stat.h>
 #include <unistd.h>    // For read, write, close
 #include <iostream>    // For std::cout, std::endl
 #include <cstdio>      // For perror
@@ -39,6 +41,7 @@
 #include <sstream>     // For std::istringstream
 #include <algorithm>   // For std::remove
 
+# define CRLF "\r\n"
 
 class HTTPRequest {
 public:
