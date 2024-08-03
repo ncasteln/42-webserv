@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:24:40 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/07/29 19:40:12 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:46:17 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int main(int argc, char **argv)
 
 		Poll pollOfServers(configuration);
 		pollOfServers.init();
-		pollOfServers.start();
+		pollOfServers.
+		
+		start();
 	}
 	catch (Exception const &exception)
 	{

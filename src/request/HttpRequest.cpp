@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpRequest.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/07/31 09:57:05 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/03 20:09:08 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ HTTPRequest::HTTPRequest(std::map<std::string, std::string> const & serverConfig
 	_method(""),
 	_uri(""),
 	_version(""),
+	_requestMap(std::map<std::string, std::string>()),
 	_serverConfig(serverConfig) {std::cout << BLUE "HTTPRequest constructor called\n" RESET;}
 
 bool HTTPRequest::isValidMethod(const std::string &mthd)
@@ -55,9 +56,12 @@ bool HTTPRequest::parse()
 	}
 
 	// Parse headers
-	_requestMap["version"] = _version;
-	_requestMap["uri"] = _uri;
-	_requestMap["method"] = _method;
+	// _requestMap["version"] = _version;
+	// _requestMap["uri"] = _uri;
+	// _requestMap["method"] = _method;
+	_requestMap.insert(std::pair<std::string, std::string>("version", _version));
+	_requestMap.insert(std::pair<std::string, std::string>("uri", _uri));
+	_requestMap.insert(std::pair<std::string, std::string>("method", _method));
 
 	while (std::getline(requestStream, line) && line != "\r")
 	{
@@ -119,9 +123,9 @@ bool HTTPRequest::handleRequest(int clientSocket)
 		return (false);
 	}
 
-	if (bytesRead < 0)
+	if (bytesRead == 0)
 	{
-		throw Exception("Receive on clientSocket Failed", CLIENTSOCKET_RECEIVE_FAILED);
+		// throw Exception("Receive on clientSocket Failed", CLIENTSOCKET_RECEIVE_FAILED);
 		close(clientSocket);
 		return (false);
 	}

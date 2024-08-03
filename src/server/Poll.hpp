@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Poll.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:54:45 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/07/30 09:04:57 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/03 16:50:14 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ private:
 	nfds_t _currentMonitored;
 	size_t _totalMonitored;
 	struct pollfd *_totalFds;
+	int _eventsNum;
 
 	std::map<int, int> _POLLINCheck; //navid_check
 
@@ -37,7 +38,7 @@ private:
 	bool mergeServerWithSamePort(std::map<std::string, std::string> serverConf);
 	void initFds(void);
 
-	void handleEvent(void);
+	void handleEvent(nfds_t i);
 	void handleListeningEvent(size_t i, Server &s);
 	void handleConnectedEvent(size_t i, Server &s);
 	void addConnectedSocketToMonitoredList(int connectedSocketFd);

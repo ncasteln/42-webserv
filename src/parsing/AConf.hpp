@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   AConf.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:24:02 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/07/18 14:00:06 by ncasteln         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:01:22 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __ACONF_HPP__
 # define __ACONF_HPP__
 
-#include "parser.h"
+#include "../../include/parser.h"
 #include "parse_utils.hpp"
 
 class AConf

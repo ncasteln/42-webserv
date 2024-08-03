@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:43 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/01 16:39:20 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/03 19:38:39 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ public:
 
 	ListeningSocket const &getListeningSocket(void) const;
 
-	void printConnectedSockets(void);
+	void printConnectedSockets(void) const;
 
 	const std::string getPort(void) const;
 	size_t getMonitoredFdsNum(void) const;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/01 14:13:15 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/03 19:42:09 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,32 @@ HTTPResponse& Server::getHttpResp() {
 
 ListeningSocket const &Server::getListeningSocket(void) const { return (this->_listeningSocket); }
 
-void Server::printConnectedSockets(void)
+// void Server::printConnectedSockets(void)
+// {
+// 	std::map<int, ConnectedSocket>::iterator iterator;
+// 	std::map<int, ConnectedSocket>::iterator iteratorEnd = this->_connectedSockets.end();
+
+// 	std::cout << "Connected Sockets List in Server: " << this->_listeningSocket.getSocketFd() << " ===> " << std::endl;
+// 	for (iterator = this->_connectedSockets.begin(); iterator != iteratorEnd; iterator++)
+// 		std::cout << "connectedSocket.key = " << iterator->first << " connectedSocket.value = " << iterator->second.getSocketFd() << std::endl;
+
+// }
+
+void Server::printConnectedSockets(void) const
 {
-	std::map<int, ConnectedSocket>::iterator iterator;
-	std::map<int, ConnectedSocket>::iterator iteratorEnd = this->_connectedSockets.end();
+	if (this->_connectedSockets.empty())
+    {
+        std::cout << "No connected sockets." << std::endl;
+        return;
+    }
+    std::map<int, ConnectedSocket>::const_iterator it;
+    std::map<int, ConnectedSocket>::const_iterator itEnd = this->_connectedSockets.end();
 
-	std::cout << "Connected Sockets List in Server: " << this->_listeningSocket.getSocketFd() << " ===> " << std::endl;
-	for (iterator = this->_connectedSockets.begin(); iterator != iteratorEnd; iterator++)
-		std::cout << "connectedSocket.key = " << iterator->first << " connectedSocket.value = " << iterator->second.getSocketFd() << std::endl;
-
+    std::cout << "Connected Sockets List in Server: " << this->_listeningSocket.getSocketFd() << " ===> " << std::endl;
+    for (it = this->_connectedSockets.begin(); it != itEnd; ++it)
+    {
+        std::cout << "connectedSocket.key = " << it->first << " connectedSocket.value = " << it->second.getSocketFd() << std::endl;
+    }
 }
 
 void Server::setPortAvailable(void)
