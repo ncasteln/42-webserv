@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 02:33:30 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/13 18:18:50 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/13 10:53:54 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ public:
 	~HTTPRequest( void );
 	HTTPRequest(std::map<std::string, std::string> const & serverConfig);
 
-	bool parse(ConnectedSocket const &connectedSocket); //------------------------------------------------Parse The Received Request and Create a Map
+	bool parse(ConnectedSocket &connectedSocket); //------------------------------------------------Parse The Received Request and Create a Map
 	bool handleRequest(int connectedSocketFd, pollfd *pollFds, size_t i, ConnectedSocket &connectedSocket); //------------------------Receive The Request From The Socket
 	std::map<std::string, std::string> const & getRequestMap();
 	std::string const & getRequestString() const;

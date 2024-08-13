@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/13 18:20:09 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/13 10:53:13 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ HTTPResponse::HTTPResponse() {
 }
 
 HTTPResponse::HTTPResponse(std::map<std::string, std::string> const & serverConfig) :
-	_serverConfig(serverConfig), _post(Post())  {
+	_serverConfig(serverConfig), _post(Post()), _delete(Delete())  {
 	loadMimeTypes(MIME);
 	// std::cout << CYAN "HTTPResponse args constructor called\n" RESET;
 }
@@ -71,11 +71,13 @@ std::string HTTPResponse::getResponse(int const clientSocket, ConnectedSocket &c
     }
 
     // Then, check if the method is POST or DELETE and the URI is not a directory
-    if ((method == "POST" || method == "DELETE") && !isDirectory(uri)) {
-        if (method == "POST") {
+    else if ((method == "POST" || method == "DELETE") && !isDirectory(uri)) {
+        if (method == "POST" && this->_requestMap["uri"] == "/delete")
+			return createHandleDelete(connectedSocket);
+		else if (method == "POST") {
             return createHandlePost(clientSocket, connectedSocket);
         } else if (method == "DELETE") {
-            return createHandleDelete();
+            return createHandleDelete(connectedSocket);
         }
     }
 
@@ -120,9 +122,10 @@ std::string HTTPResponse::createHandlePost(int const connectedSocketFd, Connecte
 	// std::string responseBody = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nConnection: keep-alive\r\n\r\n<html><body><h1>POST Request Received</h1></body></html>";
 	// return responseBody;
 	// displayRequestMap();
-	this->_post.handlePost(connectedSocket.getRequestHeader(), connectedSocket.getRequestBody(), connectedSocketFd);
+	this->_post.handlePost(connectedSocketFd, connectedSocket);
 	// std::cout << "POST REQUEST RECEIVED =========> " << std::endl
 	std::string response = this->_post.getResponses()[connectedSocketFd];
+
 	this->_post.getResponses().erase(connectedSocketFd);
 	this->_post.getPostData().clear();
 	this->_post.printPostData();
@@ -130,9 +133,14 @@ std::string HTTPResponse::createHandlePost(int const connectedSocketFd, Connecte
 	return (response);
 }
 
-std::string HTTPResponse::createHandleDelete() {
-	std::string responseBody = "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: text/html\r\n\r\n<html><body><h1>DELETE Request Received</h1></body></html>";
-	return responseBody;
+std::string HTTPResponse::createHandleDelete(ConnectedSocket &connectedSocket) {
+	// std::string responseBody = "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: text/html\r\n\r\n<html><body><h1>DELETE Request Received</h1></body></html>";
+	this->_delete.handleDelete(connectedSocket);
+	std::string response = this->_delete.getSocketResponse(connectedSocket.getSocketFd());
+
+	this->_delete.removeSocketResponse(connectedSocket.getSocketFd());
+	this->_delete.clearDeleteData();
+	return response;
 }
 
 // std::string httpGeneralHeader

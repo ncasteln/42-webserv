@@ -1,54 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Post.hpp                                           :+:      :+:    :+:   */
+/*   Delete.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 08:28:20 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/12 13:21:40 by fahmadia         ###   ########.fr       */
+/*   Created: 2024/08/13 09:02:42 by fahmadia          #+#    #+#             */
+/*   Updated: 2024/08/13 12:16:06 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POST_HPP
-# define POST_HPP
+#ifndef DELETE_HPP
+# define DELETE_HPP
 
-# include <map>
-# include <iostream>
 # include <string>
+# include <map>
 # include <sstream>
-# include <fstream>
-# include "colors.h"
+# include <sys/types.h>
+# include <dirent.h>
+# include <sys/stat.h>
+# include <unistd.h>
 # include "ConnectedSocket.hpp"
 
-class Post {
-	public:
-		Post(void);
-		Post(Post const &other);
-		Post &operator=(Post const &rhs);
-		~Post(void);
-
-		std::map<int, std::string> &getResponses(void);
-
-		std::map<std::string, std::string> &getPostData(void);
-		void handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket);
-		void printPostData(void);
-		void printPostResponses(void);
+class Delete {
 	private:
+		std::string _storageDirectory;
 		std::map<int, std::string> _responses;
-		std::map<std::string, std::string> _postData;
+		std::map<std::string, std::string> _deleteData;
 
-		void parsePostRequest(std::string const &requestHeader, std::ostringstream const &requestBody);
+	Delete &operator=(Delete const &rhs);
+	public:
+		Delete(void);
+		~Delete(void);
+		Delete(Delete const &other);
+
+		std::string const &getSocketResponse(int connectedSocketFd);
+		void removeSocketResponse(int connectedSocketFd);
+		void clearDeleteData(void);
 		std::string getSubStringFromMiddleToIndex(std::string &string, std::string const &toFind, size_t startOffset, size_t endIndex);
 		std::string getSubStringFromStartToIndex(std::string &string, std::string const &toFind);
+		void handleDelete(ConnectedSocket &connectedSocket);
+		void parseDeleteRequest(std::string const &requestHeader, std::ostringstream const &requestBody);
 		std::string getDelimiter(std::string request);
-		std::string getBody(std::string request);
 		void getSubmittedFormInputs(std::string body, std::string formFieldsDelimiter);
 		void getSubmitedData(std::string &contentDisposition);
-		std::string getName(std::string string);
 		std::string getFileName(std::string string);
-		void saveFile(std::string string);
-
+		bool deleteFile(ConnectedSocket &connectedSocket);
 };
 
 #endif
