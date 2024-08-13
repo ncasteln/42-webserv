@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/13 11:00:52 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/13 11:47:32 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ public:
 	std::string generateDefaultErrorPage(int statusCode, std::string const & message);
 	std::string generateErrorPage(int statusCode);
 	std::string generateErrorHeaders(int statusCode, size_t contentLength);
-
 
 	friend class HTTPRequest;
 
