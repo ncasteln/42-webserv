@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpResponse.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/10 17:52:01 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/13 18:13:48 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 # include "errors.h"
 # include "Post.hpp"
 # include "ConnectedSocket.hpp"
+# include "HttpRequest.hpp"
 
 
 enum POLLEvents {
@@ -62,8 +63,17 @@ public:
 	void setRequestStringInResponse(std::string const & requestString);
     void displayRequestMap();
 	void displayServerConfig();
+	bool isDirectory(const std::string& uri) const;
 	//-------------------------------MIME------------------------------
     std::string getMimeType(const std::string& extension) const;
+
+	//-------------------------------ERROR-----------------------------
+	std::string generateDefaultErrorPage(int statusCode, std::string const & message);
+	std::string generateErrorPage(int statusCode);
+	std::string generateErrorHeaders(int statusCode, size_t contentLength);
+
+
+	friend class HTTPRequest;
 
 protected:
 	std::string createHandleGet();

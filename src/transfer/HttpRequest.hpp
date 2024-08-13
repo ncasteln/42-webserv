@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpRequest.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 02:33:30 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/11 20:42:56 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/08/13 18:15:44 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
