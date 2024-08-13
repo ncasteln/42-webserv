@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/13 10:53:13 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/13 10:59:22 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -368,7 +368,7 @@ bool HTTPResponse::handleResponse(int clientSocket, int const &pollEvent, pollfd
 	if (pollEvent == POLLOUT_TMP) {
 		std::map<int, std::string>::iterator iter = _responses.find(clientSocket);
 		if (iter == _responses.end()) {
-			Server::logMessage("Error: No response In The _responses found for socket fd: " + clientSocket);
+			Server::logMessage("Error: No response In The _responses found for socket fd: " + intToString(clientSocket));
 			// std::cerr << "No response found for socket fd " << clientSocket << std::endl;
 			return false;
 		}
@@ -377,18 +377,18 @@ bool HTTPResponse::handleResponse(int clientSocket, int const &pollEvent, pollfd
         ssize_t bytesSent = send(clientSocket, this->_responses[clientSocket].c_str(), this->_responses[clientSocket].size(), 0);
         // ssize_t bytesSent = send(clientSocket, response.c_str(), response.size(), 0);
         if (bytesSent == -1) {
-			Server::logMessage("Error: No Byte Sent for socket fd: " + clientSocket);
+			Server::logMessage("Error: No Byte Sent for socket fd: " + intToString(clientSocket));
 			return false;
         }
 		connectedSocket.setConnectionStartTime();
 		if (bytesSent < static_cast<ssize_t>(this->_responses[clientSocket].size())) {
-			Server::logMessage("WARNING: Sent Byte Less Than The Response for socket fd: " + clientSocket);
+			Server::logMessage("WARNING: Sent Byte Less Than The Response for socket fd: " + intToString(clientSocket));
 			pollFds[i].events = POLLOUT;
 			this->_responses[clientSocket].erase(0, bytesSent);
 			connectedSocket.setState(WRITING);
 		}
 		else {
-			Server::logMessage("INFO: Response Sent for socket fd: " + clientSocket);
+			Server::logMessage("INFO: Response Sent for socket fd: " + intToString(clientSocket));
 			connectedSocket.setState(DONE);
 			pollFds[i].events = POLLIN;
 			pollFds[i].revents = 0;
@@ -396,7 +396,7 @@ bool HTTPResponse::handleResponse(int clientSocket, int const &pollEvent, pollfd
 		}
         return true;
     }
-	Server::logMessage("ERROR: Response Function Failed for socket fd: " + clientSocket);
+	Server::logMessage("ERROR: Response Function Failed for socket fd: " + intToString(clientSocket));
     return false;
 }
 // HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n<html><body><h1>404 Not Found</h1></body></html>
@@ -487,18 +487,18 @@ std::string HTTPResponse::generateErrorHeaders(int statusCode, size_t contentLen
 		headers << "Content-Length: " << contentLength << CRLF;
 	}
 		headers << CRLF;
-	Server::logMessage("INFO: Error Header Created, StatusCode: " + statusCode);
+	Server::logMessage("INFO: Error Header Created, StatusCode: " + intToString(statusCode));
     return headers.str();
 }
 
-std::string intToString(int const i) {
+std::string HTTPResponse::intToString(int const i) {
 	std::ostringstream convert;
 	convert << i;
 	return (convert.str());
 }
 
 std::string HTTPResponse::generateDefaultErrorPage(int statusCode, std::string const & message) {
-	Server::logMessage("INFO: Default Error Body Dynamically Generated, StatusCode: " + statusCode);
+	Server::logMessage("INFO: Default Error Body Dynamically Generated, StatusCode: " + intToString(statusCode));
     // Replace with your custom error page logic
     std::string content = "<html>\r\n<head><title>" + intToString(statusCode) + " " + message + 
 		"</title></head>\r\n<body>\r\n<center><h2>" + intToString(statusCode) + " "	+ message +
@@ -513,7 +513,7 @@ std::string HTTPResponse::generateErrorPage(int statusCode) {
 
     std::ifstream file(errorFilePath.c_str());
     if (file.is_open()) {
-		Server::logMessage("INFO: Default Error Page Statically Read, StatusCode: " + statusCode);
+		Server::logMessage("INFO: Default Error Page Statically Read, StatusCode: " + intToString(statusCode));
         // Custom error page exists
         std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 		size_t contentLength = content.length();

@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/13 10:46:49 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/13 11:00:52 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ public:
     void displayRequestMap();
 	void displayServerConfig();
 	bool isDirectory(const std::string& uri) const;
+	std::string intToString(int const i);
+
 	//-------------------------------MIME------------------------------
     std::string getMimeType(const std::string& extension) const;
 
