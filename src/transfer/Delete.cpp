@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:06:15 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/27 16:57:16 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:30:31 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string Delete::getFileName(std::string string) {
 	return name;
 }
 
-void Delete::getSubmitedData(std::string &contentDisposition) {
+void Delete::getSubmittedData(std::string &contentDisposition) {
 	if (!contentDisposition.length())
 		return;
 	std::string toFind = "name";
@@ -70,7 +70,7 @@ void Delete::getSubmittedFormInputs(std::string body, std::string formFieldsDeli
 		std::string toFind = "Content-Disposition";
 		body = getSubStringFromMiddleToIndex(body, toFind, 0, std::string::npos);
 		std::string contentDisposition = getSubStringFromStartToIndex(body, formFieldsDelimiter);
-		getSubmitedData(contentDisposition);
+		getSubmittedData(contentDisposition);
 		body = getSubStringFromMiddleToIndex(body, formFieldsDelimiter, 0, std::string::npos);
 	}
 	

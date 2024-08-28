@@ -23,5 +23,10 @@
 	</form>
 	<button class="delete"> Delete / DELETE </button>
 	<script src="./script.js"></script>
+	<form action="/cgi-bin/process.py" method="POST">
+        Name: <input type="text" name="name"><br>
+        File: <input type="file" name="filename"><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

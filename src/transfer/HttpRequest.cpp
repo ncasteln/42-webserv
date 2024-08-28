@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/22 12:03:30 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:13:16 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,23 @@ bool HTTPRequest::isValidHttpVersion(const std::string &ver)
 	return (ver == "HTTP/1.1" || ver == "HTTP/1.0");
 }
 
-bool HTTPRequest::isCgiRequest( void ) {
-	const std::string validExt[3] = { ".sh", ".py", ".pl" };
+// bool HTTPRequest::isCgiRequest( void ) {
+// 	const std::string validExt[3] = { ".sh", ".py", ".pl" };
 
-	if (_uri.find_last_of('.') == std::string::npos){
-		Server::logMessage("ERROR: Sig Request With No Extention!");
-		return (false);
-	}
-	std::string extension = _uri.substr(_uri.find_last_of('.'), _uri.length() - 1);
-	for (size_t i = 0; i < 3; i++) {
-		if (extension == validExt[i]){
-			Server::logMessage("INFO: Sig Request Received!");
-			return (true);
-		}
-	}
-	Server::logMessage("ERROR: Sig Request With Unsupported Extention!");
-	return (false);
-}
+// 	if (_uri.find_last_of('.') == std::string::npos){
+// 		Server::logMessage("ERROR: Sig Request With No Extention!");
+// 		return (false);
+// 	}
+// 	std::string extension = _uri.substr(_uri.find_last_of('.'), _uri.length() - 1);
+// 	for (size_t i = 0; i < 3; i++) {
+// 		if (extension == validExt[i]){
+// 			Server::logMessage("INFO: Sig Request Received!");
+// 			return (true);
+// 		}
+// 	}
+// 	Server::logMessage("ERROR: Sig Request With Unsupported Extention!");
+// 	return (false);
+// }
 
 /*Parse The Received Request And Creat a Map Of Its Headers*/
 bool HTTPRequest::parse(ConnectedSocket &connectedSocket)

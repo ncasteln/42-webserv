@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/27 11:23:40 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 13:24:35 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <dirent.h>
 # include <map>
 # include <ctime>
 # include <algorithm>

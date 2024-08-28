@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/27 17:36:53 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:20:59 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,23 @@ int HTTPResponse::validate() {
 	return (200);
 }
 
+// bool HTTPResponse::isDirectory(const std::string& uri) const {
+// 	std::string filePath = _serverConfig.at("root") + uri;
+// 	struct stat st;
+// 	if (stat(filePath.c_str(), &st) != 0) {
+// 		return false; // Error in accessing the path or path does not exist
+// 	}
+// 	return S_ISDIR(st.st_mode);
+// }
+
 bool HTTPResponse::isDirectory(const std::string& uri) const {
-	std::string filePath = _serverConfig.at("root") + uri;
-	std::cout << "Hiii: " << filePath << std::endl;
-	struct stat st;
-	if (stat(filePath.c_str(), &st) != 0) {
-		return false; // Error in accessing the path or path does not exist
-	}
-	return S_ISDIR(st.st_mode);
+    std::string filePath = _serverConfig.at("root") + uri;
+    DIR* dir = opendir(filePath.c_str());
+    if (dir) {
+        closedir(dir);
+        return true;
+    }
+    return false;
 }
 
 /*Return Corresponding Status Code Response Or In Case

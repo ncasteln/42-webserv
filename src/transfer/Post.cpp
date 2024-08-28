@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:29:21 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/27 15:23:57 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:39:20 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void Post::saveFile(std::string string) {
 	return;
 }
 
-void Post::getSubmitedData(std::string &contentDisposition) {
+void Post::getSubmittedData(std::string &contentDisposition) {
 	// std::cout << "contentDisposition = " << contentDisposition << std::endl;
 	if (!contentDisposition.length())
 		return;
@@ -162,7 +162,7 @@ void Post::getSubmittedFormInputs(std::string body, std::string formFieldsDelimi
 
 		std::string contentDisposition = getSubStringFromStartToIndex(body, formFieldsDelimiter);
 
-		getSubmitedData(contentDisposition);
+		getSubmittedData(contentDisposition);
 		// body = body.substr(delimiterIndex, std::string::npos);
 		body = getSubStringFromMiddleToIndex(body, formFieldsDelimiter, 0, std::string::npos);
 	}
@@ -179,7 +179,19 @@ void Post::parsePostRequest(std::string const &requestHeader, std::ostringstream
 }
 
 std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket) {
-	if (connectedSocket.getRequestMap()["uri"] != "/submit") {
+	std::string uri = connectedSocket.getRequestMap()["uri"];
+	std::string filePath =  _serverConfig.at("root") + uri;
+	if (isCGI(filePath)) {
+		// Execute the CGI script with the POST data
+    	std::string cgiResponse = handleCGI(uri);
+    	// Check if the CGI script ran successfully
+    	if (cgiResponse.empty()) {
+        	this->_responses[connectedSocketFd] = generateErrorPage(500);
+		} else {
+        	this->_responses[connectedSocketFd] = cgiResponse;
+		}
+		return (this->_responses[connectedSocketFd]);
+	} else if (uri != "/submit") {
 		this->_responses[connectedSocketFd] = generateErrorPage(400);
 		return (this->_responses[connectedSocketFd]);
 	}

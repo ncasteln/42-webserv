@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 22:41:26 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/22 11:30:38 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:35:25 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,52 @@ std::string GetHandler::handleDirectoryListing(const std::string& dirPath) {
 
 /*Return the correct address of the index file inside the received directory address
 in case if its existence.*/
+
 std::string GetHandler::findIndexFile(const std::string& dirPath) {
     std::vector<std::string> indexFiles;
     indexFiles.push_back("index.html");
     indexFiles.push_back("index.htm");
     indexFiles.push_back("default.html");
-    struct stat st;
 
     for (std::vector<std::string>::iterator it = indexFiles.begin(); it != indexFiles.end(); ++it) {
         const std::string& indexFile = *it;
         std::string fullPath = dirPath + "/" + indexFile;
-        if (stat(fullPath.c_str(), &st) == 0 && S_ISREG(st.st_mode)) {
-            Server::logMessage("INFO: Index File Found: " + fullPath);
-            return fullPath;
+
+        // Try to open the file with O_DIRECTORY
+        int fd = open(fullPath.c_str(), O_RDONLY | O_DIRECTORY);
+        if (fd == -1) {
+            // If errno is ENOTDIR, it's a regular file
+            if (errno == ENOTDIR) {
+                Server::logMessage("INFO: Index File Found: " + fullPath);
+                return fullPath;
+            }
+        } else {
+            // It's a directory, close the file descriptor
+            close(fd);
         }
     }
 
     return ""; // Return empty string if no index file is found
 }
+
+// std::string GetHandler::findIndexFile(const std::string& dirPath) {
+//     std::vector<std::string> indexFiles;
+//     indexFiles.push_back("index.html");
+//     indexFiles.push_back("index.htm");
+//     indexFiles.push_back("default.html");
+//     struct stat st;
+
+//     for (std::vector<std::string>::iterator it = indexFiles.begin(); it != indexFiles.end(); ++it) {
+//         const std::string& indexFile = *it;
+//         std::string fullPath = dirPath + "/" + indexFile;
+//         if (stat(fullPath.c_str(), &st) == 0 && S_ISREG(st.st_mode)) {
+//             Server::logMessage("INFO: Index File Found: " + fullPath);
+//             return fullPath;
+//         }
+//     }
+
+//     return ""; // Return empty string if no index file is found
+// }
 
 std::string const GetHandler::setServerRoot(std::string const & filePath) {
     if (filePath == "./www//farshad/")
@@ -89,11 +117,23 @@ std::string const GetHandler::setServerRoot(std::string const & filePath) {
 }
 
 /*Check whether the passed file path is directory or not.*/
-bool isFile(std::string const & filePath) {
-    struct stat st;
-	if (stat(filePath.c_str(), &st) == 0 && S_ISDIR(st.st_mode))
-		return (false);
-	return (true);
+// bool isFile(std::string const & filePath) {
+//     struct stat st;
+// 	if (stat(filePath.c_str(), &st) == 0 && S_ISDIR(st.st_mode))
+// 		return (false);
+// 	return (true);
+// }
+
+bool isFile(const std::string &filePath) {
+    int fd = open(filePath.c_str(), O_RDONLY | O_DIRECTORY);
+    if (fd == -1) {
+        // If errno is ENOTDIR, the path is a regular file
+        return (errno == ENOTDIR);
+    } else {
+        // It's a directory, close the file descriptor
+        close(fd);
+        return false;
+    }
 }
 
 

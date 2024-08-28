@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:02:42 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/27 15:52:36 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:30:31 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Delete : public HTTPResponse {
 		void parseDeleteRequest(std::string const &requestHeader, std::ostringstream const &requestBody);
 		std::string getDelimiter(std::string request);
 		void getSubmittedFormInputs(std::string body, std::string formFieldsDelimiter);
-		void getSubmitedData(std::string &contentDisposition);
+		void getSubmittedData(std::string &contentDisposition);
 		std::string getFileName(std::string string);
 		bool deleteFile(ConnectedSocket &connectedSocket);
 };
