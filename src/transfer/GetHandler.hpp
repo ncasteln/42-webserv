@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GetHandler.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 22:36:51 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/15 13:30:53 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:32:06 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class GetHandler : public HTTPResponse {
 	public:
 		GetHandler(const std::map<std::string, std::string>& requestMap, const std::map<std::string, std::string>& serverConfig);
 		~GetHandler();
-		std::string GetMethod();
+		std::string GetMethod(ConnectedSocket &connectedSocket);
 	
 	private:
 	std::string handleDirectoryListing(const std::string& dirPath);

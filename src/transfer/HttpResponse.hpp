@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpResponse.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/29 11:39:22 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:28:44 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ public:
 protected:
 	std::string const &getStorageDirectory(void) const;
 
-	std::string createHandleGet();
+	std::string createHandleGet(ConnectedSocket &connectedSocket);
 	std::string createHandlePost(int const connectedSocketFd, ConnectedSocket &connectedSocket);
 	std::string createHandleDelete(ConnectedSocket &connectedSocket);
 	std::string httpStatusCode(int statusCode);

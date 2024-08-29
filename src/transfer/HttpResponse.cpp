@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpResponse.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/29 11:43:46 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:35:27 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ std::string HTTPResponse::getResponse(int const clientSocket, ConnectedSocket &c
 
 	// First, check if the method is GET or HEAD
 	if (method == "GET" || method == "HEAD") {
-		return createHandleGet();
+		return createHandleGet(connectedSocket);
 	}
 
 	// Then, check if the method is POST or DELETE and the URI is not a directory
@@ -103,9 +103,9 @@ std::string HTTPResponse::getResponse(int const clientSocket, ConnectedSocket &c
 
 /*Creat An Instance of GetHandler Class And
 Call The Get Method To Prepare The Response.*/
-std::string HTTPResponse::createHandleGet() {
+std::string HTTPResponse::createHandleGet(ConnectedSocket &connectedSocket) {
 	GetHandler  Get(_requestMap, _serverConfig);
-	return (Get.GetMethod());
+	return (Get.GetMethod(connectedSocket));
 }
 
 std::string HTTPResponse::createHandlePost(int const connectedSocketFd, ConnectedSocket &connectedSocket) {
@@ -206,14 +206,14 @@ bool HTTPResponse::isCGI(std::string const & filePath) {
 std::string const HTTPResponse::handleCGI(std::string & uri, ConnectedSocket &connectedSocket) {
 	std::string cgiResult = cgi(uri, connectedSocket);
 
-	std::string content = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n"
-	"<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
-	"<title>CGI Execution Result</title>\r\n<style>\r\nbody {font-family: Arial, sans-serif; margin: 20px;}\r\n"
-	"pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; overflow-x: auto;}\r\n</style>\r\n"
-	"</head>\r\n<body>\r\n<h1>CGI Execution Result</h1>\r\n<pre><code>\r\n"
-	+ cgiResult + "\r\n</code></pre>\r\n</body>\r\n</html>";
+	// std::string content = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n"
+	// "<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
+	// "<title>CGI Execution Result</title>\r\n<style>\r\nbody {font-family: Arial, sans-serif; margin: 20px;}\r\n"
+	// "pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; overflow-x: auto;}\r\n</style>\r\n"
+	// "</head>\r\n<body>\r\n<h1>CGI Execution Result</h1>\r\n<pre><code>\r\n"
+	// + cgiResult + "\r\n</code></pre>\r\n</body>\r\n</html>";
 	
-	return (content);
+	return (cgiResult);
 }
 
 /*check the cgi extension, and return the corresponding interpreter.*/
@@ -366,10 +366,11 @@ std::string HTTPResponse::cgi(std::string& uri, ConnectedSocket &connectedSocket
 		Server::logMessage("ERROR: Fork failed!");
 		return generateErrorPage(500);
 	} else if (forked_ps == 0) {
-		std::cout << "Naviddddddddddddd: " << path << " method: " << _requestMap["method"] << std::endl;
+		std::cout << "Naviddddddddddddd: " << path << " method: " << connectedSocket.getRequestMap()["method"] << std::endl;
+		std::cout << "Naviddddddddddddd: " << path << " method: " << connectedSocket.getRequestBody().str() << std::endl;
 
 		// executeCGI(path, env, _requestMap["method"], _requestMap["body"], fd_pipe);
-		executeCGI(path, env, ConnectedSocket.getRequestMap("method"), ConnectedSocket.getRequestBody().str(), fd_pipe);
+		executeCGI(path, env, connectedSocket.getRequestMap()["method"], connectedSocket.getRequestBody().str(), fd_pipe);
 	} else {
 		std::string responseBody = readFromCGI(fd_pipe, forked_ps, env, 5);
 		int status;

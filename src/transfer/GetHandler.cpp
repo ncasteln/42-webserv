@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GetHandler.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 22:41:26 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/28 16:35:25 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:32:41 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ bool isFile(const std::string &filePath) {
 }
 
 
-std::string GetHandler::GetMethod() {
+std::string GetHandler::GetMethod(ConnectedSocket &connectedSocket) {
     std::string content;
     std::string date, lastMfd, eTag;
     std::ostringstream responseHeaders;
@@ -172,7 +172,7 @@ std::string GetHandler::GetMethod() {
         if (isCGI(filePath)) {
 			extension = HTML_EXTENSION;
 		// std::cout << "extension: " << extension << std::endl;
-            content = handleCGI(uri);
+            content = handleCGI(uri, connectedSocket);
 
 		}
         std::string mimeType = getMimeType(extension);
