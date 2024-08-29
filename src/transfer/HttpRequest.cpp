@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/28 17:13:16 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:42:19 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,7 +212,7 @@ bool HTTPRequest::handleRequest(int connectedSocketFd, pollfd *pollFds, size_t i
 		//close and remove
 		return (false);
 	}
-	std::cout << "request : " << buffer << std::endl;
+	// std::cout << "request : " << buffer << std::endl;
 	if (bytesRead == 0)
 	{
 		// throw Exception("Receive on clientSocket Failed", CLIENTSOCKET_RECEIVE_FAILED);

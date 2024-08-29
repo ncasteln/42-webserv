@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:29:21 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/28 17:39:20 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:36:43 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,14 +180,16 @@ void Post::parsePostRequest(std::string const &requestHeader, std::ostringstream
 
 std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket) {
 	std::string uri = connectedSocket.getRequestMap()["uri"];
-	std::string filePath =  _serverConfig.at("root") + uri;
+	std::string filePath =  _serverConfig["root"] + uri;
 	if (isCGI(filePath)) {
 		// Execute the CGI script with the POST data
-    	std::string cgiResponse = handleCGI(uri);
+    	std::string cgiResponse = handleCGI(uri, connectedSocket);
+		
     	// Check if the CGI script ran successfully
     	if (cgiResponse.empty()) {
         	this->_responses[connectedSocketFd] = generateErrorPage(500);
 		} else {
+	// std::cout << "HIIIIIIIIIIIIIIIIIIIIIIIII this is rooot: " << cgiResponse << std::endl;
         	this->_responses[connectedSocketFd] = cgiResponse;
 		}
 		return (this->_responses[connectedSocketFd]);

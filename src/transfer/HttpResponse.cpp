@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/28 17:20:59 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:43:46 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ std::string HTTPResponse::getResponse(int const clientSocket, ConnectedSocket &c
 	std::string method = _requestMap["method"];
 	std::string uri = _requestMap["uri"];
 
-	displayRequestMap();
-	displayServerConfig();
+	// displayRequestMap();
+	// displayServerConfig();
 	if (statusCode == 400) {
 		return generateErrorPage(400);
 	}
@@ -110,9 +110,13 @@ std::string HTTPResponse::createHandleGet() {
 
 std::string HTTPResponse::createHandlePost(int const connectedSocketFd, ConnectedSocket &connectedSocket) {
 	Post postResponse;
+	postResponse._serverConfig = _serverConfig;
+		// std::cout << "method =====> " << connectedSocket.getRequestMap()["body"] << std::endl;
+	// this->_requestMap = ConnectedSocket.getRequestMap();
 	postResponse.handlePost(connectedSocketFd, connectedSocket);
 	std::string response = postResponse.getSocketResponse(connectedSocketFd);
 	postResponse.removeSocketResponse(connectedSocketFd);
+	std::cout << "response:-------->" << response << std::endl;
 	postResponse.clearData();
 	return (response);
 }
@@ -199,8 +203,8 @@ bool HTTPResponse::isCGI(std::string const & filePath) {
 }
 
 /*create body of the received cgi response.*/
-std::string const HTTPResponse::handleCGI(std::string & uri) {
-	std::string cgiResult = cgi(uri);
+std::string const HTTPResponse::handleCGI(std::string & uri, ConnectedSocket &connectedSocket) {
+	std::string cgiResult = cgi(uri, connectedSocket);
 
 	std::string content = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n"
 	"<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
@@ -244,6 +248,7 @@ void executeCGI(const std::string& path, char** env, const std::string& method, 
 		}
 		pid_t input_fork = fork();
 		if (input_fork == 0) {
+
 			close(input_fd[0]);
 			write(input_fd[1], body.c_str(), body.length());
 			close(input_fd[1]);
@@ -341,10 +346,9 @@ bool checkStatusCode(std::string & text, int *err = NULL) {
 	return false;
 }
 
-std::string HTTPResponse::cgi(std::string& uri) {
-	char** env = createEnv(&uri);    
+std::string HTTPResponse::cgi(std::string& uri, ConnectedSocket &connectedSocket) {
+	char** env = createEnv(&uri); 
 	std::string path = _serverConfig["root"] + uri;
-
 	if (!env) {
 		Server::logMessage("ERROR: Environment Variable Not Available!");
 		return generateErrorPage(500);
@@ -362,7 +366,10 @@ std::string HTTPResponse::cgi(std::string& uri) {
 		Server::logMessage("ERROR: Fork failed!");
 		return generateErrorPage(500);
 	} else if (forked_ps == 0) {
-		executeCGI(path, env, _requestMap["method"], _requestMap["body"], fd_pipe);
+		std::cout << "Naviddddddddddddd: " << path << " method: " << _requestMap["method"] << std::endl;
+
+		// executeCGI(path, env, _requestMap["method"], _requestMap["body"], fd_pipe);
+		executeCGI(path, env, ConnectedSocket.getRequestMap("method"), ConnectedSocket.getRequestBody().str(), fd_pipe);
 	} else {
 		std::string responseBody = readFromCGI(fd_pipe, forked_ps, env, 5);
 		int status;
