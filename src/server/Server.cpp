@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:23 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/27 13:44:23 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/02 20:03:03 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Server::Server(std::map<std::string, std::string> settings) :
 	_keepAliveTimeout = stringToInt(settings["keepalive_timeout"]);
 	if (_keepAliveTimeout == 0)
 		logMessage("Warning: KeepAlive Is Wrong Or Zero!, And Default Is Set.");
-	std::cout << "keep alive time: " << _keepAliveTimeout << std::endl;
+	// std::cout << "keep alive time: " << _keepAliveTimeout << std::endl;
 	// _keepaliveTimeouts.push_back(settings["keepalive_timeout"]);
 	// _autoindexes.push_back(settings["autoindex"]);
 	// _clientSizes.push_back(settings["client_body_buffer_size"]);

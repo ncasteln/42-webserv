@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpResponse.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/29 14:28:44 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/02 20:08:51 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ public:
 	//-----------------------------------------------------------------
 
 
-	friend class HTTPRequest;
 
 protected:
 	std::string const &getStorageDirectory(void) const;
@@ -108,7 +107,7 @@ protected:
 	std::string cgi( std::string& uri , ConnectedSocket &connectedSocket);
 	char** createEnv( std::string * uri );
 	size_t acceptedCgiExtention(std::string const &filePath);
-	std::string readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int timeout);
+	std::string readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int time, int * status);
 	std::map<std::string, std::string> addAdditionalEnvVariables(std::string * uri);
 	//-----------------------------------------------------------------
 
@@ -130,6 +129,7 @@ protected:
 	void loadMimeTypes(const std::string& filePath);
 	//-----------------------------------------------------------------
 
+	friend class HTTPRequest;
 };
 
 #endif // HTTPRESPONSE_HPP

@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import os
 import subprocess
 import time
@@ -45,6 +43,6 @@ for key, value in os.environ.items():
 
 
 # Infinite loop
-# while True:
-#     print("This is an infinite loop...")
-#     time.sleep(1)  # Sleep for 1 second between prints to slow down the loop
+while True:
+    print("This is an infinite loop...")
+    time.sleep(1)  # Sleep for 1 second between prints to slow down the loop

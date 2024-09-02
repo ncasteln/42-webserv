@@ -1,4 +1,3 @@
-#!/usr/bin/perl
 print "<html><body><center><h1>Hello from Perl!</h1></center></body></html>";
 
 use strict;

@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:29:21 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/29 11:36:43 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:37:31 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,23 +178,42 @@ void Post::parsePostRequest(std::string const &requestHeader, std::ostringstream
 	this->getSubmittedFormInputs(body, formFieldsDelimiter);
 }
 
-std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket) {
-	std::string uri = connectedSocket.getRequestMap()["uri"];
-	std::string filePath =  _serverConfig["root"] + uri;
-	if (isCGI(filePath)) {
+std::string const Post::handlePostCGI(std::string & filePath, std::string & uri, ConnectedSocket &connectedSocket) {
 		// Execute the CGI script with the POST data
     	std::string cgiResponse = handleCGI(uri, connectedSocket);
 		
     	// Check if the CGI script ran successfully
     	if (cgiResponse.empty()) {
-        	this->_responses[connectedSocketFd] = generateErrorPage(500);
+        	return (generateErrorPage(500));
 		} else {
-	// std::cout << "HIIIIIIIIIIIIIIIIIIIIIIIII this is rooot: " << cgiResponse << std::endl;
-        	this->_responses[connectedSocketFd] = cgiResponse;
+				std::ostringstream responseHeaders;
+				std::string mimeType = "text/html";
+				std::string date, lastMfd, eTag;
+        		eTag = generateETag(filePath, date, lastMfd);
+				responseHeaders << httpStatusCode(200) << CRLF
+					<< "Date: " << date << CRLF
+					<< "Server: " << _serverConfig["server_name"] << CRLF
+					<< "Last-Modified: " << lastMfd << CRLF
+					<< "ETag: " << eTag << CRLF
+					<< "Content-Length: " << cgiResponse.size() << CRLF
+					<< "Cache-Control: no-cache" << CRLF
+					<< "Content-Type: " << mimeType << CRLF
+					<< "Connection: keep-alive" << CRLF << CRLF;
+        		responseHeaders << cgiResponse;
+			return (responseHeaders.str());
 		}
-		return (this->_responses[connectedSocketFd]);
-	} else if (uri != "/submit") {
+    return (generateErrorPage(500));
+	// std::cout << "Inside handlePost: "<< filePath << std::endl;
+}
+
+std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket) {
+	_requestMap = connectedSocket.getRequestMap();
+	std::string uri = connectedSocket.getRequestMap()["uri"];
+	std::string filePath =  _serverConfig["root"] + uri;
+	std::cout << "URIIIIIIII: " << uri << std::endl;
+	if (uri != "/submit" && uri != "/cgi-bin/process.py") {
 		this->_responses[connectedSocketFd] = generateErrorPage(400);
+	displayRequestMap();
 		return (this->_responses[connectedSocketFd]);
 	}
 	parsePostRequest(connectedSocket.getRequestHeader(), connectedSocket.getRequestBody());
@@ -206,6 +225,10 @@ std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &con
 	if (!this->_isFileSaved)
 	{
 		this->_responses[connectedSocketFd] = generateErrorPage(500);
+		return (this->_responses[connectedSocketFd]);
+	}
+	if (isCGI(filePath)) {
+		this->_responses[connectedSocketFd] = handlePostCGI(filePath, uri, connectedSocket);
 		return (this->_responses[connectedSocketFd]);
 	}
 	std::string message = "Thank you " + this->_data["name"] + ", file " + this->_data["filename"] + " is Received, and Stored in ./files/.";

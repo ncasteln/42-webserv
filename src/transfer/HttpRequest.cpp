@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpRequest.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/29 15:02:06 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/02 19:57:19 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,6 @@ bool HTTPRequest::parse(ConnectedSocket &connectedSocket)
 
 	if (!isValidMethod(_method) || !isValidHttpVersion(_version))
 		return (false);
-
-	// if (isCgiRequest()) {  //---- means: if it is folder for bins OR has extension (need to take decision)
-	// 	if (_serverConfig.find("cgi") == _serverConfig.end()) // --- if the server configuration not allows it
-	// 		return (false); // which error should be ?
-	// }
-
 	// Parse headers
 	_requestMap["version"] = _version;
 	_requestMap["uri"] = _uri;
@@ -243,16 +237,7 @@ bool HTTPRequest::handleRequest(int connectedSocketFd, pollfd *pollFds, size_t i
 		return true;
 	
 	if (!parse(connectedSocket))
-	{
-		std::string response = "HTTP/1.1 400 Bad Request\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n<html><body><h1>Bad Request</h1></body></html>";
-		send(connectedSocketFd, response.c_str(), response.length(), 0);
-		// close(clientSocket);
-		return (false);
-	}
-
-	// std::cout << YELLOW << "Request header:\n" << connectedSocket.getRequestHeader() << RESET << std::endl;
-	// std::cout << BLUE << "Request body:\n" << connectedSocket.getRequestBody().str() << RESET << std::endl;
-
+		connectedSocket.setState(ERROR);
 	return (true);
 }
 

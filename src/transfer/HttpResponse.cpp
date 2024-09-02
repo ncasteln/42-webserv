@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HttpResponse.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/29 15:35:27 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/02 20:08:43 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,9 @@ std::string HTTPResponse::createHandleGet(ConnectedSocket &connectedSocket) {
 std::string HTTPResponse::createHandlePost(int const connectedSocketFd, ConnectedSocket &connectedSocket) {
 	Post postResponse;
 	postResponse._serverConfig = _serverConfig;
-		// std::cout << "method =====> " << connectedSocket.getRequestMap()["body"] << std::endl;
-	// this->_requestMap = ConnectedSocket.getRequestMap();
 	postResponse.handlePost(connectedSocketFd, connectedSocket);
 	std::string response = postResponse.getSocketResponse(connectedSocketFd);
 	postResponse.removeSocketResponse(connectedSocketFd);
-	std::cout << "response:-------->" << response << std::endl;
 	postResponse.clearData();
 	return (response);
 }
@@ -199,6 +196,7 @@ bool HTTPResponse::isCGI(std::string const & filePath) {
             return true;
         }
     // }
+	std::cout << RED "hiiii" RESET << filePath << std::endl;
     return false;
 }
 
@@ -206,14 +204,14 @@ bool HTTPResponse::isCGI(std::string const & filePath) {
 std::string const HTTPResponse::handleCGI(std::string & uri, ConnectedSocket &connectedSocket) {
 	std::string cgiResult = cgi(uri, connectedSocket);
 
-	// std::string content = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n"
-	// "<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
-	// "<title>CGI Execution Result</title>\r\n<style>\r\nbody {font-family: Arial, sans-serif; margin: 20px;}\r\n"
-	// "pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; overflow-x: auto;}\r\n</style>\r\n"
-	// "</head>\r\n<body>\r\n<h1>CGI Execution Result</h1>\r\n<pre><code>\r\n"
-	// + cgiResult + "\r\n</code></pre>\r\n</body>\r\n</html>";
+	std::string content = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n"
+	"<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
+	"<title>CGI Execution Result</title>\r\n<style>\r\nbody {font-family: Arial, sans-serif; margin: 20px;}\r\n"
+	"pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; overflow-x: auto;}\r\n</style>\r\n"
+	"</head>\r\n<body>\r\n<h1>CGI Execution Result</h1>\r\n<pre><code>\r\n"
+	+ cgiResult + "\r\n</code></pre>\r\n</body>\r\n</html>";
 	
-	return (cgiResult);
+	return (content);
 }
 
 /*check the cgi extension, and return the corresponding interpreter.*/
@@ -236,105 +234,6 @@ bool createPipes(int fd_pipe[2]) {
 	return true;
 }
 
-void executeCGI(const std::string& path, char** env, const std::string& method, const std::string& body, int fd_pipe[2]) {
-	close(fd_pipe[0]);
-	dup2(fd_pipe[1], STDOUT_FILENO);
-
-	if (method == "POST") {
-		int input_fd[2];
-		if (pipe(input_fd) == -1) {
-			Server::logMessage("ERROR: Input pipe creation failed!");
-			exit(1);
-		}
-		pid_t input_fork = fork();
-		if (input_fork == 0) {
-
-			close(input_fd[0]);
-			write(input_fd[1], body.c_str(), body.length());
-			close(input_fd[1]);
-			exit(0);
-		} else {
-			close(input_fd[1]);
-			dup2(input_fd[0], STDIN_FILENO);
-			close(input_fd[0]);
-		}
-	}
-
-	std::string interpreter = setInterpreter(path);
-	std::cout << "<body><h2><center>Musketeers Group!</center></h2><hr></body></html>"<<std::endl; 
-
-	char *argv[] = {strdup(interpreter.c_str()), strdup(path.c_str()), NULL};
-	execve(interpreter.c_str(), argv, env);
-
-	Server::logMessage("ERROR: execve failed!");
-	close(fd_pipe[1]);
-	free(argv[0]);
-	exit(1);
-}
-
-std::string HTTPResponse::readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int timeout) {
-	std::string responseBody;
-	close(fd_pipe[1]);
-
-	char buff[100];
-	int ret = 1;
-	fd_set readfds;
-	struct timeval tv;
-	int fd_max = fd_pipe[0];
-	time_t start_time = time(NULL);
-
-	while (true) {
-		FD_ZERO(&readfds);
-		FD_SET(fd_pipe[0], &readfds);
-
-		tv.tv_sec = timeout - (time(NULL) - start_time);
-		tv.tv_usec = 0;
-
-		if (tv.tv_sec <= 0) {
-			Server::logMessage("ERROR: CGI Timeout!");
-			kill(forked_ps, SIGKILL);
-			waitpid(forked_ps, NULL, 0);
-			close(fd_pipe[0]);
-			free_dptr(env);
-			return generateErrorPage(504);
-		}
-
-		int sel = select(fd_max + 1, &readfds, NULL, NULL, &tv);
-		if (sel > 0) {
-			if (FD_ISSET(fd_pipe[0], &readfds)) {
-				bzero(buff, sizeof(buff));
-				ret = read(fd_pipe[0], buff, sizeof(buff) - 1);
-				if (ret > 0) {
-					responseBody += buff;
-				} else if (ret == 0) {
-					break;
-				} else {
-					Server::logMessage("ERROR: Reading from CGI failed!");
-					close(fd_pipe[0]);
-					free_dptr(env);
-					return generateErrorPage(500);
-				}
-			}
-		} else if (sel == 0) {
-			Server::logMessage("ERROR: CGI Timeout!");
-			kill(forked_ps, SIGKILL);
-			waitpid(forked_ps, NULL, 0);
-			close(fd_pipe[0]);
-			free_dptr(env);
-			return generateErrorPage(504);
-		} else {
-			Server::logMessage("ERROR: select() failed!");
-			close(fd_pipe[0]);
-			free_dptr(env);
-			return generateErrorPage(500);
-		}
-	}
-
-	close(fd_pipe[0]);
-	free_dptr(env);
-	return responseBody;
-}
-
 /*Check and retrieve the status code inside the error generated inside the readFromCGI.*/
 bool checkStatusCode(std::string & text, int *err = NULL) {
 	std::string code = text.substr(text.find("HTTP/1.1 ") + 9, 3);
@@ -346,46 +245,138 @@ bool checkStatusCode(std::string & text, int *err = NULL) {
 	return false;
 }
 
+// Set pipe to non-blocking mode
+bool createNonBlockingPipes(int fd_pipe[2]) {
+    if (pipe(fd_pipe) == -1) {
+        Server::logMessage("ERROR: Pipe creation failed!");
+        return false;
+    }
+
+    // Set both ends of the pipe to non-blocking mode
+    if (fcntl(fd_pipe[0], F_SETFL, O_NONBLOCK) == -1 || fcntl(fd_pipe[1], F_SETFL, O_NONBLOCK) == -1) {
+        Server::logMessage("ERROR: Setting non-blocking mode failed!");
+        close(fd_pipe[0]);
+        close(fd_pipe[1]);
+        return false;
+    }
+    return true;
+}
+
+void executeCGI(const std::string& path, char** env, const std::string& method, const std::string& body, int fd_pipe[2]) {
+    close(fd_pipe[0]);
+    dup2(fd_pipe[1], STDOUT_FILENO);
+
+    if (method == "POST") {
+        int input_fd[2];
+        if (pipe(input_fd) == -1) {
+            Server::logMessage("ERROR: Input pipe creation failed!");
+            exit(1);
+        }
+
+        pid_t input_fork = fork();
+        if (input_fork == 0) {
+            close(input_fd[0]);
+            write(input_fd[1], body.c_str(), body.length());
+            close(input_fd[1]);
+            exit(0);
+        } else {
+            close(input_fd[1]);
+            dup2(input_fd[0], STDIN_FILENO);
+            close(input_fd[0]);
+        }
+    }
+
+    std::string interpreter = setInterpreter(path);
+    char *argv[] = {strdup(interpreter.c_str()), strdup(path.c_str()), NULL};
+    execve(interpreter.c_str(), argv, env);
+
+    Server::logMessage("ERROR: execve failed!");
+    close(fd_pipe[1]);
+    free(argv[0]);
+    exit(1);
+}
+
+std::string HTTPResponse::readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int timeout, int *status) {
+    std::string responseBody;
+    close(fd_pipe[1]);
+
+    char buff[100];
+    int ret = 1;
+    time_t start_time = time(NULL);
+
+    while (true) {
+        ret = read(fd_pipe[0], buff, sizeof(buff) - 1);
+
+        if (ret > 0) {
+            buff[ret] = '\0';
+            responseBody += buff;
+        } else if (ret == 0) {
+            break;  // EOF reached
+        } else if (ret == -1 && errno == EAGAIN) {
+            // No data available, check for timeout
+            if (difftime(time(NULL), start_time) > timeout) {
+                Server::logMessage("ERROR: CGI Timeout!");
+                kill(forked_ps, SIGKILL);
+                waitpid(forked_ps, status, WNOHANG);
+                close(fd_pipe[0]);
+                free_dptr(env);
+                return generateErrorPage(504);
+            }
+            // usleep(10000);  // Sleep for a short period to prevent busy waiting
+        } else {
+            Server::logMessage("ERROR: Reading from CGI failed!");
+            close(fd_pipe[0]);
+            free_dptr(env);
+            return generateErrorPage(500);
+        }
+    }
+
+    close(fd_pipe[0]);
+    free_dptr(env);
+
+    return responseBody;
+}
+
 std::string HTTPResponse::cgi(std::string& uri, ConnectedSocket &connectedSocket) {
-	char** env = createEnv(&uri); 
-	std::string path = _serverConfig["root"] + uri;
-	if (!env) {
-		Server::logMessage("ERROR: Environment Variable Not Available!");
-		return generateErrorPage(500);
-	}
+    char** env = createEnv(&uri); 
+    std::string path = _serverConfig["root"] + uri;
+    if (!env) {
+        Server::logMessage("ERROR: Environment Variable Not Available!");
+        return generateErrorPage(500);
+    }
 
-	int fd_pipe[2];
-	if (!createPipes(fd_pipe)) {
-		free_dptr(env);
-		return generateErrorPage(500);
-	}
+    int fd_pipe[2];
+    if (!createNonBlockingPipes(fd_pipe)) {
+        free_dptr(env);
+        return generateErrorPage(500);
+    }
 
-	pid_t forked_ps = fork();
-	if (forked_ps == -1) {
-		free_dptr(env);
-		Server::logMessage("ERROR: Fork failed!");
-		return generateErrorPage(500);
-	} else if (forked_ps == 0) {
-		std::cout << "Naviddddddddddddd: " << path << " method: " << connectedSocket.getRequestMap()["method"] << std::endl;
-		std::cout << "Naviddddddddddddd: " << path << " method: " << connectedSocket.getRequestBody().str() << std::endl;
-
-		// executeCGI(path, env, _requestMap["method"], _requestMap["body"], fd_pipe);
-		executeCGI(path, env, connectedSocket.getRequestMap()["method"], connectedSocket.getRequestBody().str(), fd_pipe);
-	} else {
-		std::string responseBody = readFromCGI(fd_pipe, forked_ps, env, 5);
-		int status;
-		waitpid(forked_ps, &status, 0);
-		if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
-			Server::logMessage("INFO: CGI Passed!");
-			return responseBody;
-		} else if (!responseBody.empty() && checkStatusCode(responseBody)) {
-			int err;
-			checkStatusCode(responseBody, &err);
-			Server::logMessage("ERROR: CGI Failed!");
-			return generateErrorPage(err);
-		}
-	}
-	return generateErrorPage(500);
+    int status;
+    pid_t forked_ps = fork();
+    if (forked_ps == -1) {
+        free_dptr(env);
+        Server::logMessage("ERROR: Fork failed!");
+        return generateErrorPage(500);
+    } else if (forked_ps == 0) {
+        executeCGI(path, env, connectedSocket.getRequestMap()["method"], connectedSocket.getRequestBody().str(), fd_pipe);
+    } else {
+        std::string responseBody = readFromCGI(fd_pipe, forked_ps, env, 5, &status);
+        waitpid(forked_ps, &status, WNOHANG);
+        if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
+            Server::logMessage("INFO: CGI Passed!");
+            return responseBody;
+        } else if (!responseBody.empty()) {
+            if (checkStatusCode(responseBody)) {
+                int err;
+                checkStatusCode(responseBody, &err);
+                Server::logMessage("ERROR: CGI Failed!");
+                return generateErrorPage(err);
+            } else {
+                return responseBody;
+            }
+        }
+    }
+    return generateErrorPage(500);
 }
 
 /*Check whether the accepted script format exists, returns its position,
@@ -558,7 +549,10 @@ From The Response Map And Return True. */
 
 bool HTTPResponse::handleResponse(int clientSocket, int const &pollEvent, pollfd *pollFds, size_t i, ConnectedSocket &connectedSocket) {
 	if (pollEvent == POLLIN_TMP) {
-		_responses[clientSocket] = getResponse(clientSocket, connectedSocket);
+		if (connectedSocket.getState() == ERROR)
+			_responses[clientSocket] = generateErrorPage(400);
+		else
+			_responses[clientSocket] = getResponse(clientSocket, connectedSocket);
 		Server::logMessage("INFO: Response Generated for socket fd: " + Server::intToString(clientSocket));
 		return true;
 	}
@@ -580,6 +574,7 @@ bool HTTPResponse::handleResponse(int clientSocket, int const &pollEvent, pollfd
 		}
 		std::cout << CYAN << "Bytes sent: " << bytesSent << RESET << std::endl;
 		std::cout << CYAN << "Response size: " << this->_responses[clientSocket].size() << RESET << std::endl;
+		// std::cout << CYAN << "Response size: " << this->_responses[clientSocket].c_str() << RESET << std::endl;
 
 		connectedSocket.setConnectionStartTime();
 		if (bytesSent < static_cast<ssize_t>(this->_responses[clientSocket].size())) {
@@ -718,8 +713,9 @@ void HTTPResponse::clearData(void) {
 }
 
 std::string const &HTTPResponse::getSocketResponse(int connectedSocketFd) {
-	return this->_responses[connectedSocketFd];
+	return (this->_responses[connectedSocketFd]);
 }
+
 
 std::string HTTPResponse::getSubStringFromMiddleToIndex(std::string &string, std::string const &toFind, size_t startOffset, size_t endIndex) {
 	size_t foundIndex = string.find(toFind);

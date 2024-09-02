@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:55:19 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/08/27 14:20:50 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:56:08 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -484,7 +484,7 @@ bool Poll::receiveRequest(Server &s, size_t i, int connectedSocketFd, std::map<i
 	// std::cout << "RECEIVING THE REQUEST..." << std::endl;
 	if (s.getHttpReq().handleRequest(this->_totalFds[i].fd, this->_totalFds, i, s.getConnectedSockets()[connectedSocketFd]))
 	{
-		if (!(this->_totalFds[i].revents & POLLHUP) && (*connectedSocketIt)->second.getState() == DONE) {
+		if (!(this->_totalFds[i].revents & POLLHUP) && ((*connectedSocketIt)->second.getState() == DONE || (*connectedSocketIt)->second.getState() == ERROR)) {
 			// this->_totalFds[i].events = POLLOUT;// | POLLIN;
 			s.getHttpResp().handleResponse(this->_totalFds[i].fd, POLLIN_TMP, this->_totalFds, i, s.getConnectedSockets()[connectedSocketFd]);
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GetHandler.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 22:41:26 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/29 14:32:41 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:45:01 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::string GetHandler::handleDirectoryListing(const std::string& dirPath) {
     DIR* dir = opendir(dirPath.c_str());
     if (!dir) {
 		Server::logMessage("ERROR: Received GET request for '" + dirPath + "' But There Isn't This Directory!");
-        return generateErrorPage(500); // Internal Server Error
+        return generateErrorPage(404); // Internal Server Error
     }
 
     std::string content = "<html><head><title>Index of " + dirPath + 
@@ -175,7 +175,8 @@ std::string GetHandler::GetMethod(ConnectedSocket &connectedSocket) {
             content = handleCGI(uri, connectedSocket);
 
 		}
-        std::string mimeType = getMimeType(extension);
+        std::string mimeType = getMimeType(extension);		
+		// std::cout << "extension mime output: " << mimeType << std::endl;
         eTag = generateETag(filePath, date, lastMfd);
 
         responseHeaders << httpStatusCode(200) << CRLF

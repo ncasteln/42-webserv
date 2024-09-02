@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:28:20 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/28 17:30:31 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/01 22:56:45 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ class Post : public HTTPResponse {
 		std::string getFileName(std::string string);
 		void saveFile(std::string string);
 
+		//-------------------------------CGI-------------------------------
+		std::string const handlePostCGI(std::string & filePath, std::string & uri, ConnectedSocket &connectedSocket);
+		//-----------------------------------------------------------------
 };
 
 #endif

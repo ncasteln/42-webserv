@@ -1,4 +1,3 @@
-#!/bin/bash
 printf "<html><body><center><h1>Hello from Bash!</h1></center></body></html>"
 
 echo  $'\n----- THE SCRIPT COMMAND -----\n'

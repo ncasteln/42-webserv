@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ConnectedSocket.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:55:10 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/14 08:44:36 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:58:32 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
