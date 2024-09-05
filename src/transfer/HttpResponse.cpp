@@ -6,15 +6,15 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:46:45 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/09/02 20:08:43 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:55:55 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HttpResponse.hpp"
-#include "GetHandler.hpp"
-#include "Exception.hpp"
-#include "Post.hpp"
-#include "Delete.hpp"
+# include "HttpResponse.hpp"
+# include "GetHandler.hpp"
+# include "Exception.hpp"
+# include "Post.hpp"
+# include "Delete.hpp"
 
 HTTPResponse::HTTPResponse() : _storageDirectory("./www/farshad/cloudStorage"), _data(std::map<std::string, std::string>()) {
 	// std::cout << CYAN "HTTPResponse constructor called\n" RESET;
@@ -81,6 +81,7 @@ std::string HTTPResponse::getResponse(int const clientSocket, ConnectedSocket &c
 		return generateErrorPage(304);
 	}
 
+	displayServerConfig();
 	// First, check if the method is GET or HEAD
 	if (method == "GET" || method == "HEAD") {
 		return createHandleGet(connectedSocket);

@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:55:19 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/09/02 13:56:08 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:24:37 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,7 @@ void Poll::handleConnectedEvent(int connectedSocketFd, Server &s, std::map<int, 
 			this->removeClosedSocketsFromPollFds();
 			return;
 		}
-		else if (_totalFds[i].revents & POLLOUT)
+		else if (_totalFds[i].revents & POLLOUT) 
 			this->sendResponse(s, i, connectedSocketFd, connectedSocketIt);
 	// }
 	// catch (Exception const &exception)
@@ -481,7 +481,7 @@ bool Poll::isMaxConnection(Server &s, size_t i) {
 bool Poll::receiveRequest(Server &s, size_t i, int connectedSocketFd, std::map<int, ConnectedSocket>::iterator *connectedSocketIt) {
 	(void)connectedSocketFd;
 	// std::cout << GREEN << "Port [" << s.getPort() << "] " << " * POLLIN happened on connectedSocket: " << _totalFds[i].fd << RESET << std::endl;
-	// std::cout << "RECEIVING THE REQUEST..." << std::endl;
+	std::cout << "RECEIVING THE REQUEST..." << std::endl;
 	if (s.getHttpReq().handleRequest(this->_totalFds[i].fd, this->_totalFds, i, s.getConnectedSockets()[connectedSocketFd]))
 	{
 		if (!(this->_totalFds[i].revents & POLLHUP) && ((*connectedSocketIt)->second.getState() == DONE || (*connectedSocketIt)->second.getState() == ERROR)) {
@@ -556,4 +556,5 @@ void Poll::sendResponse(Server &s, size_t i, int connectedSocketFd, std::map<int
 	*connectedSocketIt = temp;
 	this->_totalFds[i].fd = -1;
 	this->removeClosedSocketsFromPollFds();
+
 }

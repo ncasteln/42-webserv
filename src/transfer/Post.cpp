@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:29:21 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/09/02 11:37:31 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:25:01 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,11 +213,11 @@ std::string const & Post::handlePost(int connectedSocketFd, ConnectedSocket &con
 	std::cout << "URIIIIIIII: " << uri << std::endl;
 	if (uri != "/submit" && uri != "/cgi-bin/process.py") {
 		this->_responses[connectedSocketFd] = generateErrorPage(400);
-	displayRequestMap();
 		return (this->_responses[connectedSocketFd]);
 	}
+	displayRequestMap();
 	parsePostRequest(connectedSocket.getRequestHeader(), connectedSocket.getRequestBody());
-	std::cout << "name = " << this->_data["name"] << ", filename = " << this->_data["filename"] << std::endl;
+	std::cout << BLUE "name = " RED << this->_data["name"] << BLUE ", filename = " RED << this->_data["filename"] << RESET << std::endl;
 	if (this->_data["name"].empty() || this->_data["filename"].empty()) {
 		this->_responses[connectedSocketFd] = generateErrorPage(400);
 		return (this->_responses[connectedSocketFd]);

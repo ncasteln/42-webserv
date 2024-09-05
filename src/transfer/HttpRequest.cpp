@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:39:02 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/09/02 19:57:19 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:22:05 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ bool HTTPRequest::isValidHttpVersion(const std::string &ver)
 
 // bool HTTPRequest::isCgiRequest( void ) {
 // 	const std::string validExt[3] = { ".sh", ".py", ".pl" };
-
 // 	if (_uri.find_last_of('.') == std::string::npos){
 // 		Server::logMessage("ERROR: Sig Request With No Extention!");
 // 		return (false);

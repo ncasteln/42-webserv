@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 12:03:53 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/08/13 11:43:00 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:00:28 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 /* LOCATION DIRECTIVE DEFAULTS */
 #define DEFAULT_URI				"/"
 #define DEFAULT_METHOD			"GET"
-#define DEFAULT_CGI				"" 				/* need to decide something */
+#define DEFAULT_CGI				"on" 				/* need to decide something */
 
 #define	SPACES				" \t\v\f\r"
 #define	COMMENT(c)			((c) == '#')
