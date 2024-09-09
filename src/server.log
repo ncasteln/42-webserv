@@ -23569,3 +23569,2087 @@
 [2024-08-17 00:10:37] sponse Sent for socket fd: 
 [2024-08-17 00:10:39] INFO: Connected Sockets Cleaned!
 [2024-08-17 00:10:39] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:23:53] ***** Run The Server *****
+[2024-08-19 10:23:53] INFO: The Poll Constructor Called!
+[2024-08-19 10:23:53] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:23:53] INFO: MIME Loaded.
+[2024-08-19 10:23:53] INFO: MIME Loaded.
+[2024-08-19 10:23:53] INFO: MIME Loaded.
+[2024-08-19 10:23:53] INFO: MIME Loaded.
+[2024-08-19 10:23:53] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:23:53] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:24:03] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:03] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] ERROR: Sig Request With No Extention!
+[2024-08-19 10:24:10] INFO: MIME Loaded.
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:24:10] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:24:10] esponse Generated for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] esponse Sent for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:10] INFO: MIME Loaded.
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:10] esponse Generated for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] esponse Sent for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:10] INFO: MIME Loaded.
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:10] esponse Generated for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] esponse Sent for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:10] INFO: MIME Loaded.
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:24:10] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:24:10] esponse Generated for socket fd: 
+[2024-08-19 10:24:10] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:10] esponse Sent for socket fd: 
+[2024-08-19 10:24:13] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:18] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:19] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] ERROR: Sig Request With No Extention!
+[2024-08-19 10:24:24] INFO: MIME Loaded.
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:24:24] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:24:24] esponse Generated for socket fd: 
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] esponse Sent for socket fd: 
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:24] INFO: MIME Loaded.
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:24] esponse Generated for socket fd: 
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] esponse Sent for socket fd: 
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:24] INFO: MIME Loaded.
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:24] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:24] esponse Generated for socket fd: 
+[2024-08-19 10:24:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:24] esponse Sent for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] ERROR: Sig Request With No Extention!
+[2024-08-19 10:24:25] INFO: MIME Loaded.
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:24:25] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:24:25] esponse Generated for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] esponse Sent for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:25] INFO: MIME Loaded.
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:24:25] esponse Generated for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] esponse Sent for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:24:25] INFO: MIME Loaded.
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:25] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:24:25] esponse Generated for socket fd: 
+[2024-08-19 10:24:25] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:25] esponse Sent for socket fd: 
+[2024-08-19 10:24:28] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:24:28] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:39:29] ***** Run The Server *****
+[2024-08-19 10:39:29] INFO: The Poll Constructor Called!
+[2024-08-19 10:39:29] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:39:29] INFO: MIME Loaded.
+[2024-08-19 10:39:29] INFO: MIME Loaded.
+[2024-08-19 10:39:29] INFO: MIME Loaded.
+[2024-08-19 10:39:29] INFO: MIME Loaded.
+[2024-08-19 10:39:29] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:39:29] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:39:33] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:33] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:33] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:33] INFO: MIME Loaded.
+[2024-08-19 10:39:33] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:33] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:33] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:33] esponse Generated for socket fd: 
+[2024-08-19 10:39:33] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:33] esponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:34] esponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] esponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:34] esponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] esponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:39:34] esponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] esponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:34] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:34] esponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] esponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:34] ponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ponse Sent for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:34] INFO: MIME Loaded.
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:34] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:34] ponse Generated for socket fd: 
+[2024-08-19 10:39:34] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:34] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:35] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:35] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:35] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:35] INFO: MIME Loaded.
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:35] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:35] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:35] ponse Generated for socket fd: 
+[2024-08-19 10:39:35] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:35] ponse Sent for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:36] INFO: MIME Loaded.
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:36] ponse Generated for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ponse Sent for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:36] INFO: MIME Loaded.
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:36] ponse Generated for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ponse Sent for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:36] INFO: MIME Loaded.
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:36] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:36] ponse Generated for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ponse Sent for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:36] INFO: MIME Loaded.
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:36] ponse Generated for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ponse Sent for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:36] INFO: MIME Loaded.
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:36] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:36] ponse Generated for socket fd: 
+[2024-08-19 10:39:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:36] ponse Sent for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:39:38] INFO: MIME Loaded.
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:39:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:39:38] ponse Generated for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ponse Sent for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:38] INFO: MIME Loaded.
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:39:38] ponse Generated for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ponse Sent for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:39:38] INFO: MIME Loaded.
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:39:38] ponse Generated for socket fd: 
+[2024-08-19 10:39:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:38] ponse Sent for socket fd: 
+[2024-08-19 10:39:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:43] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:39:43] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:40:27] ***** Run The Server *****
+[2024-08-19 10:40:27] INFO: The Poll Constructor Called!
+[2024-08-19 10:40:27] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:40:27] INFO: MIME Loaded.
+[2024-08-19 10:40:27] INFO: MIME Loaded.
+[2024-08-19 10:40:27] INFO: MIME Loaded.
+[2024-08-19 10:40:27] INFO: MIME Loaded.
+[2024-08-19 10:40:27] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:40:27] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:40:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:36] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:37] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:37] esponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] esponse Sent for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:37] sponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] sponse Sent for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:37] sponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] sponse Sent for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:37] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:37] sponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] sponse Sent for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:37] sponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] sponse Sent for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:37] INFO: MIME Loaded.
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:37] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:37] sponse Generated for socket fd: 
+[2024-08-19 10:40:37] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:37] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] sponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] sponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:38] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:38] esponse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] esponse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:38] onse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] onse Sent for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:38] INFO: MIME Loaded.
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:38] onse Generated for socket fd: 
+[2024-08-19 10:40:38] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:38] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:39] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:39] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] ponse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ponse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:39] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:39] ponse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ponse Sent for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:39] INFO: MIME Loaded.
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:39] onse Generated for socket fd: 
+[2024-08-19 10:40:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:39] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:40] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:40] onse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] onse Sent for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:40] INFO: MIME Loaded.
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:40] ponse Generated for socket fd: 
+[2024-08-19 10:40:40] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:40] ponse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] ponse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ponse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] ponse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ponse Sent for socket fd: 
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] ponse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ponse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:41] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:41] INFO: MIME Loaded.
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:41] onse Generated for socket fd: 
+[2024-08-19 10:40:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:41] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With No Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:40:42] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:40:42] INFO: MIME Loaded.
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:40:42] onse Generated for socket fd: 
+[2024-08-19 10:40:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:42] onse Sent for socket fd: 
+[2024-08-19 10:40:43] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:45] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:40:45] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:43:20] ***** Run The Server *****
+[2024-08-19 10:43:20] INFO: The Poll Constructor Called!
+[2024-08-19 10:43:20] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:43:20] INFO: MIME Loaded.
+[2024-08-19 10:43:20] INFO: MIME Loaded.
+[2024-08-19 10:43:20] INFO: MIME Loaded.
+[2024-08-19 10:43:20] INFO: MIME Loaded.
+[2024-08-19 10:43:20] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:43:20] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] ERROR: Sig Request With No Extention!
+[2024-08-19 10:43:23] INFO: MIME Loaded.
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad/
+[2024-08-19 10:43:23] INFO: Index File Found: ./www//farshad//index.html
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad//index.html
+[2024-08-19 10:43:23] esponse Generated for socket fd: 
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] esponse Sent for socket fd: 
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:43:23] INFO: MIME Loaded.
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad/style.css
+[2024-08-19 10:43:23] ponse Generated for socket fd: 
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] ponse Sent for socket fd: 
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:43:23] INFO: MIME Loaded.
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:43:23] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-08-19 10:43:23] sponse Generated for socket fd: 
+[2024-08-19 10:43:23] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:23] sponse Sent for socket fd: 
+[2024-08-19 10:43:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:24] ERROR: Sig Request With Unsupported Extention!
+[2024-08-19 10:43:24] INFO: MIME Loaded.
+[2024-08-19 10:43:24] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:43:24] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-08-19 10:43:24] sponse Generated for socket fd: 
+[2024-08-19 10:43:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:24] sponse Sent for socket fd: 
+[2024-08-19 10:43:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:29] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:29] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:39] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:39] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:43:41] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:43:41] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:44:04] ***** Run The Server *****
+[2024-08-19 10:44:04] INFO: The Poll Constructor Called!
+[2024-08-19 10:44:04] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:44:04] INFO: MIME Loaded.
+[2024-08-19 10:44:04] INFO: MIME Loaded.
+[2024-08-19 10:44:04] INFO: MIME Loaded.
+[2024-08-19 10:44:04] INFO: MIME Loaded.
+[2024-08-19 10:44:04] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:44:04] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:44:06] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:44:06] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:45:23] ***** Run The Server *****
+[2024-08-19 10:45:23] INFO: The Poll Constructor Called!
+[2024-08-19 10:45:23] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:45:23] INFO: MIME Loaded.
+[2024-08-19 10:45:23] INFO: MIME Loaded.
+[2024-08-19 10:45:23] INFO: MIME Loaded.
+[2024-08-19 10:45:23] INFO: MIME Loaded.
+[2024-08-19 10:45:23] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:45:23] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:45:30] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:45:32] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:45:32] ERROR: Sig Request With No Extention!
+[2024-08-19 10:45:32] INFO: MIME Loaded.
+[2024-08-19 10:45:32] INFO: Received GET request for ./www//farshad/porcodio
+[2024-08-19 10:45:32] ERROR: File Not Open In The readBinaryFile Function!
+[2024-08-19 10:45:32] INFO: Received GET request for ./www//farshad/porcodio
+[2024-08-19 10:45:32] 8;5;5m
+[2024-08-19 10:45:32] AD
+[2024-08-19 10:45:32] esponse Generated for socket fd: 
+[2024-08-19 10:45:32] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:45:32] esponse Sent for socket fd: 
+[2024-08-19 10:45:42] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:45:42] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:45:52] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:45:52] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:46:02] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:46:02] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:46:12] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:46:12] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:46:22] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:46:22] WARNING: EventsNum Is Equal To 0.!
+[2024-08-19 10:46:24] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:46:24] WARNING: EventsNum Is Less Than 0.!
+[2024-08-19 10:50:48] ***** Run The Server *****
+[2024-08-19 10:50:48] INFO: The Poll Constructor Called!
+[2024-08-19 10:50:48] INFO: The Servers In The Poll Constructor Created!
+[2024-08-19 10:50:48] INFO: MIME Loaded.
+[2024-08-19 10:50:48] INFO: MIME Loaded.
+[2024-08-19 10:50:48] INFO: MIME Loaded.
+[2024-08-19 10:50:48] INFO: MIME Loaded.
+[2024-08-19 10:50:48] INFO: The Fds In The Poll Constructor Initiated!
+[2024-08-19 10:50:48] INFO: The Poll On The Server List start To set!
+[2024-08-19 10:50:52] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:50:53] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:50:53] ERROR: Sig Request With No Extention!
+[2024-08-19 10:50:53] INFO: MIME Loaded.
+[2024-08-19 10:50:53] INFO: Received GET request for ./www//farshad/porcodio
+[2024-08-19 10:50:53] ERROR: File Not Open In The readBinaryFile Function!
+[2024-08-19 10:50:53] INFO: Received GET request for ./www//farshad/porcodio
+[2024-08-19 10:50:53] 8;5;5m
+[2024-08-19 10:50:53] AD
+[2024-08-19 10:50:53] esponse Generated for socket fd: 
+[2024-08-19 10:50:53] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:50:53] esponse Sent for socket fd: 
+[2024-08-19 10:50:57] INFO: Connected Sockets Cleaned!
+[2024-08-19 10:50:57] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:48:19] ***** Run The Server *****
+[2024-09-09 08:48:19] INFO: The Poll Constructor Called!
+[2024-09-09 08:48:19] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 08:48:19] INFO: MIME Loaded.
+[2024-09-09 08:48:19] INFO: MIME Loaded.
+[2024-09-09 08:48:19] INFO: MIME Loaded.
+[2024-09-09 08:48:19] INFO: MIME Loaded.
+[2024-09-09 08:48:19] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 08:48:19] INFO: The Poll On The Server List start To set!
+[2024-09-09 08:48:20] INFO: Connected Sockets Cleaned!
+[2024-09-09 08:48:20] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:51:16] ***** Run The Server *****
+[2024-09-09 08:51:16] INFO: The Poll Constructor Called!
+[2024-09-09 08:51:16] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 08:51:16] INFO: MIME Loaded.
+[2024-09-09 08:51:16] INFO: MIME Loaded.
+[2024-09-09 08:51:16] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 08:51:16] INFO: The Poll On The Server List start To set!
+[2024-09-09 08:51:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 08:51:16] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:52:46] ***** Run The Server *****
+[2024-09-09 08:52:46] INFO: The Poll Constructor Called!
+[2024-09-09 08:52:46] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 08:52:46] INFO: MIME Loaded.
+[2024-09-09 08:52:46] INFO: MIME Loaded.
+[2024-09-09 08:52:46] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 08:52:46] INFO: The Poll On The Server List start To set!
+[2024-09-09 08:52:47] INFO: Connected Sockets Cleaned!
+[2024-09-09 08:52:47] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:53:16] ***** Run The Server *****
+[2024-09-09 08:53:16] INFO: The Poll Constructor Called!
+[2024-09-09 08:53:16] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 08:53:16] INFO: MIME Loaded.
+[2024-09-09 08:53:16] INFO: MIME Loaded.
+[2024-09-09 08:53:16] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 08:53:16] INFO: The Poll On The Server List start To set!
+[2024-09-09 08:53:17] INFO: Connected Sockets Cleaned!
+[2024-09-09 08:53:17] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:53:23] ***** Run The Server *****
+[2024-09-09 08:53:23] INFO: The Poll Constructor Called!
+[2024-09-09 08:53:23] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 08:53:23] INFO: MIME Loaded.
+[2024-09-09 08:53:23] INFO: MIME Loaded.
+[2024-09-09 08:53:23] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 08:53:23] INFO: The Poll On The Server List start To set!
+[2024-09-09 08:53:23] INFO: Connected Sockets Cleaned!
+[2024-09-09 08:53:23] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 08:53:41] ***** Run The Server *****
+[2024-09-09 08:55:09] ***** Run The Server *****
+[2024-09-09 08:56:22] ***** Run The Server *****
+[2024-09-09 08:56:33] ***** Run The Server *****
+[2024-09-09 08:57:12] ***** Run The Server *****
+[2024-09-09 09:00:18] ***** Run The Server *****
+[2024-09-09 09:00:30] ***** Run The Server *****
+[2024-09-09 09:03:12] ***** Run The Server *****
+[2024-09-09 09:21:40] ***** Run The Server *****
+[2024-09-09 09:21:47] ***** Run The Server *****
+[2024-09-09 09:21:56] ***** Run The Server *****
+[2024-09-09 09:29:14] ***** Run The Server *****
+[2024-09-09 09:31:23] ***** Run The Server *****
+[2024-09-09 09:32:07] ***** Run The Server *****
+[2024-09-09 09:36:36] ***** Run The Server *****
+[2024-09-09 09:36:48] ***** Run The Server *****
+[2024-09-09 09:36:51] ***** Run The Server *****
+[2024-09-09 09:38:56] ***** Run The Server *****
+[2024-09-09 09:41:22] ***** Run The Server *****
+[2024-09-09 09:41:32] ***** Run The Server *****
+[2024-09-09 09:42:14] ***** Run The Server *****
+[2024-09-09 09:44:37] ***** Run The Server *****
+[2024-09-09 09:45:04] ***** Run The Server *****
+[2024-09-09 09:48:16] ***** Run The Server *****
+[2024-09-09 09:49:10] ***** Run The Server *****
+[2024-09-09 09:49:26] ***** Run The Server *****
+[2024-09-09 09:49:33] ***** Run The Server *****
+[2024-09-09 09:49:46] ***** Run The Server *****
+[2024-09-09 09:49:52] ***** Run The Server *****
+[2024-09-09 09:51:05] ***** Run The Server *****
+[2024-09-09 09:51:40] ***** Run The Server *****
+[2024-09-09 09:52:42] ***** Run The Server *****
+[2024-09-09 09:53:14] ***** Run The Server *****
+[2024-09-09 09:53:30] ***** Run The Server *****
+[2024-09-09 09:53:38] ***** Run The Server *****
+[2024-09-09 09:53:45] ***** Run The Server *****
+[2024-09-09 10:05:42] ***** Run The Server *****
+[2024-09-09 10:06:30] ***** Run The Server *****
+[2024-09-09 10:06:36] ***** Run The Server *****
+[2024-09-09 10:06:38] ***** Run The Server *****
+[2024-09-09 10:06:45] ***** Run The Server *****
+[2024-09-09 10:06:47] ***** Run The Server *****
+[2024-09-09 10:06:53] ***** Run The Server *****
+[2024-09-09 10:06:56] ***** Run The Server *****
+[2024-09-09 10:07:00] ***** Run The Server *****
+[2024-09-09 10:07:05] ***** Run The Server *****
+[2024-09-09 10:07:07] ***** Run The Server *****
+[2024-09-09 10:07:11] ***** Run The Server *****
+[2024-09-09 10:07:16] ***** Run The Server *****
+[2024-09-09 10:07:19] ***** Run The Server *****
+[2024-09-09 10:07:30] ***** Run The Server *****
+[2024-09-09 10:07:38] ***** Run The Server *****
+[2024-09-09 10:07:40] ***** Run The Server *****
+[2024-09-09 10:07:56] ***** Run The Server *****
+[2024-09-09 10:08:07] ***** Run The Server *****
+[2024-09-09 10:08:17] ***** Run The Server *****
+[2024-09-09 10:08:30] ***** Run The Server *****
+[2024-09-09 10:08:41] ***** Run The Server *****
+[2024-09-09 10:08:51] ***** Run The Server *****
+[2024-09-09 10:09:04] ***** Run The Server *****
+[2024-09-09 10:09:24] ***** Run The Server *****
+[2024-09-09 10:09:31] ***** Run The Server *****
+[2024-09-09 10:09:51] ***** Run The Server *****
+[2024-09-09 10:09:54] ***** Run The Server *****
+[2024-09-09 10:10:09] ***** Run The Server *****
+[2024-09-09 10:10:29] ***** Run The Server *****
+[2024-09-09 10:10:40] ***** Run The Server *****
+[2024-09-09 10:10:49] ***** Run The Server *****
+[2024-09-09 10:11:01] ***** Run The Server *****
+[2024-09-09 10:11:08] ***** Run The Server *****
+[2024-09-09 10:11:22] ***** Run The Server *****
+[2024-09-09 10:11:49] ***** Run The Server *****
+[2024-09-09 10:11:59] ***** Run The Server *****
+[2024-09-09 10:12:37] ***** Run The Server *****
+[2024-09-09 10:12:45] ***** Run The Server *****
+[2024-09-09 10:12:53] ***** Run The Server *****
+[2024-09-09 10:13:10] ***** Run The Server *****
+[2024-09-09 10:13:21] ***** Run The Server *****
+[2024-09-09 10:13:32] ***** Run The Server *****
+[2024-09-09 10:13:40] ***** Run The Server *****
+[2024-09-09 10:13:58] ***** Run The Server *****
+[2024-09-09 10:14:11] ***** Run The Server *****
+[2024-09-09 10:14:55] ***** Run The Server *****
+[2024-09-09 10:14:55] INFO: The Poll Constructor Called!
+[2024-09-09 10:14:55] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:14:55] INFO: MIME Loaded.
+[2024-09-09 10:14:55] INFO: MIME Loaded.
+[2024-09-09 10:14:55] INFO: MIME Loaded.
+[2024-09-09 10:14:55] INFO: MIME Loaded.
+[2024-09-09 10:14:55] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:14:55] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:15:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:03] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:03] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:03] ERROR: Sig Request With No Extention!
+[2024-09-09 10:15:03] INFO: MIME Loaded.
+[2024-09-09 10:15:03] INFO: Received GET request for ./www//
+[2024-09-09 10:15:03] INFO: Received GET request for ./www//
+[2024-09-09 10:15:03] sponse Generated for socket fd: 
+[2024-09-09 10:15:03] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:03] sponse Sent for socket fd: 
+[2024-09-09 10:15:04] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:04] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:15:04] INFO: MIME Loaded.
+[2024-09-09 10:15:04] INFO: Received GET request for ./www//favicon.ico
+[2024-09-09 10:15:04] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:15:04] INFO: Received GET request for ./www//favicon.ico
+[2024-09-09 10:15:04] 8;5;5m
+[2024-09-09 10:15:04] AD
+[2024-09-09 10:15:04] sponse Generated for socket fd: 
+[2024-09-09 10:15:04] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:04] sponse Sent for socket fd: 
+[2024-09-09 10:15:07] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:17] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:17] ERROR: Sig Request With No Extention!
+[2024-09-09 10:15:17] INFO: MIME Loaded.
+[2024-09-09 10:15:17] INFO: Received GET request for ./www//
+[2024-09-09 10:15:17] INFO: Received GET request for ./www//
+[2024-09-09 10:15:17] sponse Generated for socket fd: 
+[2024-09-09 10:15:17] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:17] sponse Sent for socket fd: 
+[2024-09-09 10:15:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:15:26] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:16:24] ***** Run The Server *****
+[2024-09-09 10:16:24] INFO: The Poll Constructor Called!
+[2024-09-09 10:16:24] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:16:24] INFO: MIME Loaded.
+[2024-09-09 10:16:24] INFO: MIME Loaded.
+[2024-09-09 10:16:24] INFO: MIME Loaded.
+[2024-09-09 10:16:24] INFO: MIME Loaded.
+[2024-09-09 10:16:24] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:16:24] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:16:30] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:31] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:31] ERROR: Sig Request With No Extention!
+[2024-09-09 10:16:31] INFO: MIME Loaded.
+[2024-09-09 10:16:31] INFO: Received GET request for ./www//
+[2024-09-09 10:16:31] WARNING: AutoIndex Is Off for ./www//
+[2024-09-09 10:16:31] OR: Sig Request With No Extention!
+[2024-09-09 10:16:31] EAD
+[2024-09-09 10:16:31] esponse Generated for socket fd: 
+[2024-09-09 10:16:31] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:31] esponse Sent for socket fd: 
+[2024-09-09 10:16:41] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:41] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:16:48] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:48] ERROR: Sig Request With No Extention!
+[2024-09-09 10:16:48] INFO: MIME Loaded.
+[2024-09-09 10:16:48] INFO: Received GET request for ./www//
+[2024-09-09 10:16:48] WARNING: AutoIndex Is Off for ./www//
+[2024-09-09 10:16:48] OR: Sig Request With No Extention!
+[2024-09-09 10:16:48] EAD
+[2024-09-09 10:16:48] esponse Generated for socket fd: 
+[2024-09-09 10:16:48] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:48] esponse Sent for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] ERROR: Sig Request With No Extention!
+[2024-09-09 10:16:50] INFO: MIME Loaded.
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/
+[2024-09-09 10:16:50] INFO: Index File Found: ./www//nico//index.html
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico//index.html
+[2024-09-09 10:16:50] sponse Generated for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] sponse Sent for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:16:50] INFO: MIME Loaded.
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/style.css
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/style.css
+[2024-09-09 10:16:50] sponse Generated for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] sponse Sent for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:16:50] INFO: MIME Loaded.
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/images/nico.jpg
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/images/nico.jpg
+[2024-09-09 10:16:50] sponse Generated for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] sponse Sent for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:16:50] INFO: MIME Loaded.
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/favicon.ico
+[2024-09-09 10:16:50] INFO: Received GET request for ./www//nico/favicon.ico
+[2024-09-09 10:16:50] sponse Generated for socket fd: 
+[2024-09-09 10:16:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:16:50] sponse Sent for socket fd: 
+[2024-09-09 10:17:00] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:00] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:17:10] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:10] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:17:20] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:20] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:17:30] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:30] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:17:40] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:40] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:17:43] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:45] ERROR: Sig Request With No Extention!
+[2024-09-09 10:17:45] INFO: MIME Loaded.
+[2024-09-09 10:17:45] INFO: Received GET request for ./www//farshad
+[2024-09-09 10:17:45] INFO: Index File Found: ./www//farshad/index.html
+[2024-09-09 10:17:45] INFO: Received GET request for ./www//farshad/index.html
+[2024-09-09 10:17:45] esponse Generated for socket fd: 
+[2024-09-09 10:17:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:45] esponse Sent for socket fd: 
+[2024-09-09 10:17:46] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:46] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:17:46] INFO: MIME Loaded.
+[2024-09-09 10:17:46] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:17:46] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:17:46] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:17:46] 8;5;5m
+[2024-09-09 10:17:46] AD
+[2024-09-09 10:17:46] esponse Generated for socket fd: 
+[2024-09-09 10:17:46] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:46] esponse Sent for socket fd: 
+[2024-09-09 10:17:46] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:46] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:17:46] INFO: MIME Loaded.
+[2024-09-09 10:17:46] INFO: Received GET request for ./www//images/farshad.jpg
+[2024-09-09 10:17:46] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:17:46] INFO: Received GET request for ./www//images/farshad.jpg
+[2024-09-09 10:17:46] 8;5;5m
+[2024-09-09 10:17:46] AD
+[2024-09-09 10:17:46] esponse Generated for socket fd: 
+[2024-09-09 10:17:46] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:46] esponse Sent for socket fd: 
+[2024-09-09 10:17:46] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:52] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] ERROR: Sig Request With No Extention!
+[2024-09-09 10:17:53] INFO: MIME Loaded.
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//nico
+[2024-09-09 10:17:53] INFO: Index File Found: ./www//nico/index.html
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//nico/index.html
+[2024-09-09 10:17:53] esponse Generated for socket fd: 
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] esponse Sent for socket fd: 
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:17:53] INFO: MIME Loaded.
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:17:53] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:17:53] 8;5;5m
+[2024-09-09 10:17:53] AD
+[2024-09-09 10:17:53] esponse Generated for socket fd: 
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] esponse Sent for socket fd: 
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:17:53] INFO: MIME Loaded.
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//images/nico.jpg
+[2024-09-09 10:17:53] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:17:53] INFO: Received GET request for ./www//images/nico.jpg
+[2024-09-09 10:17:53] 8;5;5m
+[2024-09-09 10:17:53] AD
+[2024-09-09 10:17:53] sponse Generated for socket fd: 
+[2024-09-09 10:17:53] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:17:53] sponse Sent for socket fd: 
+[2024-09-09 10:18:03] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:18:03] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:18:05] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:18:05] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:19:54] ***** Run The Server *****
+[2024-09-09 10:19:54] INFO: The Poll Constructor Called!
+[2024-09-09 10:19:54] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:19:54] INFO: MIME Loaded.
+[2024-09-09 10:19:54] INFO: MIME Loaded.
+[2024-09-09 10:19:54] INFO: MIME Loaded.
+[2024-09-09 10:19:54] INFO: MIME Loaded.
+[2024-09-09 10:19:54] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:19:54] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:20:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:02] ERROR: Sig Request With No Extention!
+[2024-09-09 10:20:02] INFO: MIME Loaded.
+[2024-09-09 10:20:02] INFO: Received GET request for ./www//
+[2024-09-09 10:20:02] WARNING: AutoIndex Is Off for ./www//
+[2024-09-09 10:20:02] OR: Sig Request With No Extention!
+[2024-09-09 10:20:02] EAD
+[2024-09-09 10:20:02] esponse Generated for socket fd: 
+[2024-09-09 10:20:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:02] esponse Sent for socket fd: 
+[2024-09-09 10:20:05] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:05] ERROR: Sig Request With No Extention!
+[2024-09-09 10:20:05] INFO: MIME Loaded.
+[2024-09-09 10:20:05] INFO: Received GET request for ./www//
+[2024-09-09 10:20:05] WARNING: AutoIndex Is Off for ./www//
+[2024-09-09 10:20:05] OR: Sig Request With No Extention!
+[2024-09-09 10:20:05] EAD
+[2024-09-09 10:20:05] esponse Generated for socket fd: 
+[2024-09-09 10:20:05] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:05] esponse Sent for socket fd: 
+[2024-09-09 10:20:15] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:15] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:20:25] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:25] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:20:25] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] ERROR: Sig Request With No Extention!
+[2024-09-09 10:20:26] INFO: MIME Loaded.
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//nico
+[2024-09-09 10:20:26] INFO: Index File Found: ./www//nico/index.html
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//nico/index.html
+[2024-09-09 10:20:26] esponse Generated for socket fd: 
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] esponse Sent for socket fd: 
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:20:26] INFO: MIME Loaded.
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:20:26] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//style.css
+[2024-09-09 10:20:26] 8;5;5m
+[2024-09-09 10:20:26] AD
+[2024-09-09 10:20:26] esponse Generated for socket fd: 
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] esponse Sent for socket fd: 
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:20:26] INFO: MIME Loaded.
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//images/nico.jpg
+[2024-09-09 10:20:26] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:20:26] INFO: Received GET request for ./www//images/nico.jpg
+[2024-09-09 10:20:26] 8;5;5m
+[2024-09-09 10:20:26] AD
+[2024-09-09 10:20:26] esponse Generated for socket fd: 
+[2024-09-09 10:20:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:26] esponse Sent for socket fd: 
+[2024-09-09 10:20:31] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:20:31] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:20:52] ***** Run The Server *****
+[2024-09-09 10:20:52] INFO: The Poll Constructor Called!
+[2024-09-09 10:20:52] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:20:52] INFO: MIME Loaded.
+[2024-09-09 10:20:52] INFO: MIME Loaded.
+[2024-09-09 10:20:52] INFO: MIME Loaded.
+[2024-09-09 10:20:52] INFO: MIME Loaded.
+[2024-09-09 10:20:52] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:20:52] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:21:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:02] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:21:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:09] ERROR: Sig Request With No Extention!
+[2024-09-09 10:21:09] INFO: MIME Loaded.
+[2024-09-09 10:21:09] INFO: Received GET request for ./www//navid/images
+[2024-09-09 10:21:09] WARNING: AutoIndex Is Off for ./www//navid/images
+[2024-09-09 10:21:09] OR: Sig Request With No Extention!
+[2024-09-09 10:21:09] EAD
+[2024-09-09 10:21:09] esponse Generated for socket fd: 
+[2024-09-09 10:21:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:09] esponse Sent for socket fd: 
+[2024-09-09 10:21:10] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:10] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:21:10] INFO: MIME Loaded.
+[2024-09-09 10:21:10] INFO: Received GET request for ./www//navid/favicon.ico
+[2024-09-09 10:21:10] INFO: Received GET request for ./www//navid/favicon.ico
+[2024-09-09 10:21:10] esponse Generated for socket fd: 
+[2024-09-09 10:21:10] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:10] esponse Sent for socket fd: 
+[2024-09-09 10:21:15] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:15] ERROR: Sig Request With No Extention!
+[2024-09-09 10:21:15] INFO: MIME Loaded.
+[2024-09-09 10:21:15] INFO: Received GET request for ./www//navid/navid/images
+[2024-09-09 10:21:15] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:21:15] INFO: Received GET request for ./www//navid/navid/images
+[2024-09-09 10:21:15] 8;5;5m
+[2024-09-09 10:21:15] AD
+[2024-09-09 10:21:15] esponse Generated for socket fd: 
+[2024-09-09 10:21:15] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:15] esponse Sent for socket fd: 
+[2024-09-09 10:21:25] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:25] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:21:35] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:35] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:21:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:45] ERROR: Sig Request With No Extention!
+[2024-09-09 10:21:45] INFO: MIME Loaded.
+[2024-09-09 10:21:45] INFO: Received GET request for ./www//navid/navid/images/
+[2024-09-09 10:21:45] ERROR: File Not Open In The readBinaryFile Function!
+[2024-09-09 10:21:45] INFO: Received GET request for ./www//navid/navid/images/
+[2024-09-09 10:21:45] 8;5;5m
+[2024-09-09 10:21:45] AD
+[2024-09-09 10:21:45] esponse Generated for socket fd: 
+[2024-09-09 10:21:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:45] esponse Sent for socket fd: 
+[2024-09-09 10:21:49] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:49] ERROR: Sig Request With No Extention!
+[2024-09-09 10:21:49] INFO: MIME Loaded.
+[2024-09-09 10:21:49] INFO: Received GET request for ./www//navid/images/
+[2024-09-09 10:21:49] WARNING: AutoIndex Is Off for ./www//navid/images/
+[2024-09-09 10:21:49] OR: Sig Request With No Extention!
+[2024-09-09 10:21:49] EAD
+[2024-09-09 10:21:49] esponse Generated for socket fd: 
+[2024-09-09 10:21:49] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:49] esponse Sent for socket fd: 
+[2024-09-09 10:21:59] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:21:59] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:22:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:09] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:12] INFO: MIME Loaded.
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/
+[2024-09-09 10:22:12] INFO: Index File Found: ./www//farshad//index.html
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad//index.html
+[2024-09-09 10:22:12] esponse Generated for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] esponse Sent for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:12] INFO: MIME Loaded.
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:22:12] esponse Generated for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] esponse Sent for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:12] INFO: MIME Loaded.
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:22:12] esponse Generated for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] esponse Sent for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:12] INFO: MIME Loaded.
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-09-09 10:22:12] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-09-09 10:22:12] esponse Generated for socket fd: 
+[2024-09-09 10:22:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:12] esponse Sent for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:14] INFO: MIME Loaded.
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/
+[2024-09-09 10:22:14] INFO: Index File Found: ./www//navid//index.html
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid//index.html
+[2024-09-09 10:22:14] ponse Generated for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] ponse Sent for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:14] INFO: MIME Loaded.
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/style.css
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/style.css
+[2024-09-09 10:22:14] ponse Generated for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] ponse Sent for socket fd: 
+[2024-09-09 10:22:14] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:14] INFO: MIME Loaded.
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/images/navid.jpg
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/images/navid.jpg
+[2024-09-09 10:22:14] onse Generated for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] onse Sent for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:22:14] INFO: MIME Loaded.
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/favicon.ico
+[2024-09-09 10:22:14] INFO: Received GET request for ./www//navid/favicon.ico
+[2024-09-09 10:22:14] onse Generated for socket fd: 
+[2024-09-09 10:22:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:14] onse Sent for socket fd: 
+[2024-09-09 10:22:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:18] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:18] INFO: MIME Loaded.
+[2024-09-09 10:22:18] INFO: Received GET request for ./www//navid/images
+[2024-09-09 10:22:18] WARNING: AutoIndex Is Off for ./www//navid/images
+[2024-09-09 10:22:18] OR: Sig Request With No Extention!
+[2024-09-09 10:22:18] EAD
+[2024-09-09 10:22:18] onse Generated for socket fd: 
+[2024-09-09 10:22:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:18] onse Sent for socket fd: 
+[2024-09-09 10:22:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:26] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:26] INFO: MIME Loaded.
+[2024-09-09 10:22:26] INFO: Received GET request for ./www//navid/images/
+[2024-09-09 10:22:26] WARNING: AutoIndex Is Off for ./www//navid/images/
+[2024-09-09 10:22:26] OR: Sig Request With No Extention!
+[2024-09-09 10:22:26] EAD
+[2024-09-09 10:22:26] onse Generated for socket fd: 
+[2024-09-09 10:22:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:26] onse Sent for socket fd: 
+[2024-09-09 10:22:26] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:36] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:36] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:22:40] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:40] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:40] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:40] INFO: MIME Loaded.
+[2024-09-09 10:22:40] INFO: Received GET request for ./www//farshad/images/
+[2024-09-09 10:22:40] WARNING: AutoIndex Is Off for ./www//farshad/images/
+[2024-09-09 10:22:40] OR: Sig Request With No Extention!
+[2024-09-09 10:22:40] EAD
+[2024-09-09 10:22:40] esponse Generated for socket fd: 
+[2024-09-09 10:22:40] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:40] esponse Sent for socket fd: 
+[2024-09-09 10:22:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:50] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:50] INFO: MIME Loaded.
+[2024-09-09 10:22:50] INFO: Received GET request for ./www//farshad/form
+[2024-09-09 10:22:50] INFO: Index File Found: ./www//farshad/form/index.html
+[2024-09-09 10:22:50] INFO: Received GET request for ./www//farshad/form/index.html
+[2024-09-09 10:22:50] esponse Generated for socket fd: 
+[2024-09-09 10:22:50] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:50] esponse Sent for socket fd: 
+[2024-09-09 10:22:52] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:52] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:52] INFO: MIME Loaded.
+[2024-09-09 10:22:52] INFO: Received GET request for ./www//farshad/form/
+[2024-09-09 10:22:52] INFO: Index File Found: ./www//farshad/form//index.html
+[2024-09-09 10:22:52] INFO: Received GET request for ./www//farshad/form//index.html
+[2024-09-09 10:22:52] esponse Generated for socket fd: 
+[2024-09-09 10:22:52] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:52] esponse Sent for socket fd: 
+[2024-09-09 10:22:56] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:56] ERROR: Sig Request With No Extention!
+[2024-09-09 10:22:56] INFO: MIME Loaded.
+[2024-09-09 10:22:56] INFO: Received GET request for ./www//farshad/images/
+[2024-09-09 10:22:56] WARNING: AutoIndex Is Off for ./www//farshad/images/
+[2024-09-09 10:22:56] OR: Sig Request With No Extention!
+[2024-09-09 10:22:56] EAD
+[2024-09-09 10:22:56] esponse Generated for socket fd: 
+[2024-09-09 10:22:56] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:22:56] esponse Sent for socket fd: 
+[2024-09-09 10:23:06] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:06] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:23:07] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:07] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:23:09] ***** Run The Server *****
+[2024-09-09 10:23:09] INFO: The Poll Constructor Called!
+[2024-09-09 10:23:09] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:23:09] INFO: MIME Loaded.
+[2024-09-09 10:23:09] INFO: MIME Loaded.
+[2024-09-09 10:23:09] INFO: MIME Loaded.
+[2024-09-09 10:23:09] INFO: MIME Loaded.
+[2024-09-09 10:23:09] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:23:09] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:11] INFO: MIME Loaded.
+[2024-09-09 10:23:11] INFO: Received GET request for ./www//farshad/images/
+[2024-09-09 10:23:11] WARNING: AutoIndex Is Off for ./www//farshad/images/
+[2024-09-09 10:23:11] OR: Sig Request With No Extention!
+[2024-09-09 10:23:11] EAD
+[2024-09-09 10:23:11] esponse Generated for socket fd: 
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] esponse Sent for socket fd: 
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:23:11] INFO: MIME Loaded.
+[2024-09-09 10:23:11] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-09-09 10:23:11] INFO: Received GET request for ./www//farshad/favicon.ico
+[2024-09-09 10:23:11] esponse Generated for socket fd: 
+[2024-09-09 10:23:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:11] esponse Sent for socket fd: 
+[2024-09-09 10:23:13] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:13] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:13] INFO: MIME Loaded.
+[2024-09-09 10:23:13] INFO: Received GET request for ./www//farshad/images
+[2024-09-09 10:23:13] WARNING: AutoIndex Is Off for ./www//farshad/images
+[2024-09-09 10:23:13] OR: Sig Request With No Extention!
+[2024-09-09 10:23:13] EAD
+[2024-09-09 10:23:13] esponse Generated for socket fd: 
+[2024-09-09 10:23:13] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:13] esponse Sent for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:16] INFO: MIME Loaded.
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad/
+[2024-09-09 10:23:16] INFO: Index File Found: ./www//farshad//index.html
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad//index.html
+[2024-09-09 10:23:16] esponse Generated for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] esponse Sent for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:23:16] INFO: MIME Loaded.
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:23:16] esponse Generated for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] esponse Sent for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:23:16] INFO: MIME Loaded.
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:23:16] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:23:16] sponse Generated for socket fd: 
+[2024-09-09 10:23:16] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:16] sponse Sent for socket fd: 
+[2024-09-09 10:23:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:18] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:18] INFO: MIME Loaded.
+[2024-09-09 10:23:18] INFO: Received GET request for ./www//farshad/images
+[2024-09-09 10:23:18] WARNING: AutoIndex Is Off for ./www//farshad/images
+[2024-09-09 10:23:18] OR: Sig Request With No Extention!
+[2024-09-09 10:23:18] EAD
+[2024-09-09 10:23:18] sponse Generated for socket fd: 
+[2024-09-09 10:23:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:18] sponse Sent for socket fd: 
+[2024-09-09 10:23:28] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:28] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:23:30] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:30] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:30] INFO: MIME Loaded.
+[2024-09-09 10:23:30] INFO: Received GET request for ./www//farshad/images/
+[2024-09-09 10:23:30] WARNING: AutoIndex Is Off for ./www//farshad/images/
+[2024-09-09 10:23:30] OR: Sig Request With No Extention!
+[2024-09-09 10:23:30] EAD
+[2024-09-09 10:23:30] sponse Generated for socket fd: 
+[2024-09-09 10:23:30] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:30] sponse Sent for socket fd: 
+[2024-09-09 10:23:30] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:39] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:39] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:39] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:39] INFO: MIME Loaded.
+[2024-09-09 10:23:39] INFO: Received GET request for ./www//navid/images/
+[2024-09-09 10:23:39] WARNING: AutoIndex Is Off for ./www//navid/images/
+[2024-09-09 10:23:39] OR: Sig Request With No Extention!
+[2024-09-09 10:23:39] EAD
+[2024-09-09 10:23:39] ponse Generated for socket fd: 
+[2024-09-09 10:23:39] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:39] ponse Sent for socket fd: 
+[2024-09-09 10:23:39] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:41] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:41] ERROR: Sig Request With No Extention!
+[2024-09-09 10:23:41] INFO: MIME Loaded.
+[2024-09-09 10:23:41] INFO: Received GET request for ./www//navid/images
+[2024-09-09 10:23:41] WARNING: AutoIndex Is Off for ./www//navid/images
+[2024-09-09 10:23:41] OR: Sig Request With No Extention!
+[2024-09-09 10:23:41] EAD
+[2024-09-09 10:23:41] ponse Generated for socket fd: 
+[2024-09-09 10:23:41] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:41] ponse Sent for socket fd: 
+[2024-09-09 10:23:51] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:23:51] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:24:01] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:24:01] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:24:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:24:11] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:24:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:24:18] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:30:31] ***** Run The Server *****
+[2024-09-09 10:30:31] INFO: The Poll Constructor Called!
+[2024-09-09 10:30:31] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:30:31] INFO: MIME Loaded.
+[2024-09-09 10:30:31] INFO: MIME Loaded.
+[2024-09-09 10:30:31] INFO: MIME Loaded.
+[2024-09-09 10:30:31] INFO: MIME Loaded.
+[2024-09-09 10:30:31] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:30:31] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:30:41] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:30:41] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:30:51] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:30:51] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:31:01] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:01] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:31:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:11] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:31:21] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:21] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:31:25] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:25] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:31:28] ***** Run The Server *****
+[2024-09-09 10:31:28] INFO: The Poll Constructor Called!
+[2024-09-09 10:31:28] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:31:28] INFO: MIME Loaded.
+[2024-09-09 10:31:28] INFO: MIME Loaded.
+[2024-09-09 10:31:28] INFO: MIME Loaded.
+[2024-09-09 10:31:28] INFO: MIME Loaded.
+[2024-09-09 10:31:28] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:31:28] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:31:38] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:38] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:31:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:45] ERROR: Sig Request With No Extention!
+[2024-09-09 10:31:45] INFO: MIME Loaded.
+[2024-09-09 10:31:45] INFO: Received GET request for ./www//navid/images/
+[2024-09-09 10:31:45] WARNING: AutoIndex Is Off for ./www//navid/images/
+[2024-09-09 10:31:45] OR: Sig Request With No Extention!
+[2024-09-09 10:31:45] EAD
+[2024-09-09 10:31:45] esponse Generated for socket fd: 
+[2024-09-09 10:31:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:45] esponse Sent for socket fd: 
+[2024-09-09 10:31:45] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:47] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:47] ERROR: Sig Request With No Extention!
+[2024-09-09 10:31:47] INFO: MIME Loaded.
+[2024-09-09 10:31:47] INFO: Received GET request for ./www//navid/images
+[2024-09-09 10:31:47] WARNING: AutoIndex Is Off for ./www//navid/images
+[2024-09-09 10:31:47] OR: Sig Request With No Extention!
+[2024-09-09 10:31:47] EAD
+[2024-09-09 10:31:47] esponse Generated for socket fd: 
+[2024-09-09 10:31:47] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:47] esponse Sent for socket fd: 
+[2024-09-09 10:31:57] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:31:57] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:07] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:07] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:17] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:17] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:27] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:27] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:37] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:37] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:47] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:47] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:32:48] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:32:48] WARNING: EventsNum Is Less Than 0.!
+[2024-09-09 10:37:07] ***** Run The Server *****
+[2024-09-09 10:37:07] INFO: The Poll Constructor Called!
+[2024-09-09 10:37:07] INFO: The Servers In The Poll Constructor Created!
+[2024-09-09 10:37:07] INFO: MIME Loaded.
+[2024-09-09 10:37:07] INFO: MIME Loaded.
+[2024-09-09 10:37:07] INFO: MIME Loaded.
+[2024-09-09 10:37:07] INFO: MIME Loaded.
+[2024-09-09 10:37:07] INFO: The Fds In The Poll Constructor Initiated!
+[2024-09-09 10:37:07] INFO: The Poll On The Server List start To set!
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] ERROR: Sig Request With No Extention!
+[2024-09-09 10:37:09] INFO: MIME Loaded.
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad/
+[2024-09-09 10:37:09] INFO: Index File Found: ./www//farshad//index.html
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad//index.html
+[2024-09-09 10:37:09] esponse Generated for socket fd: 
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] esponse Sent for socket fd: 
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:09] INFO: MIME Loaded.
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:37:09] esponse Generated for socket fd: 
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] esponse Sent for socket fd: 
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:09] INFO: MIME Loaded.
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:37:09] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:37:09] sponse Generated for socket fd: 
+[2024-09-09 10:37:09] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:09] sponse Sent for socket fd: 
+[2024-09-09 10:37:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:11] ERROR: Sig Request With No Extention!
+[2024-09-09 10:37:11] INFO: MIME Loaded.
+[2024-09-09 10:37:11] INFO: Received GET request for ./www//farshad/images
+[2024-09-09 10:37:11] WARNING: AutoIndex Is Off for ./www//farshad/images
+[2024-09-09 10:37:11] OR: Sig Request With No Extention!
+[2024-09-09 10:37:11] EAD
+[2024-09-09 10:37:11] sponse Generated for socket fd: 
+[2024-09-09 10:37:11] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:11] sponse Sent for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] ERROR: Sig Request With No Extention!
+[2024-09-09 10:37:14] INFO: MIME Loaded.
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad//
+[2024-09-09 10:37:14] INFO: Index File Found: ./www//farshad///index.html
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad///index.html
+[2024-09-09 10:37:14] sponse Generated for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] sponse Sent for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:14] INFO: MIME Loaded.
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad//style.css
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad//style.css
+[2024-09-09 10:37:14] sponse Generated for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] sponse Sent for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:14] INFO: MIME Loaded.
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad//images/farshad.jpg
+[2024-09-09 10:37:14] INFO: Received GET request for ./www//farshad//images/farshad.jpg
+[2024-09-09 10:37:14] esponse Generated for socket fd: 
+[2024-09-09 10:37:14] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:14] esponse Sent for socket fd: 
+[2024-09-09 10:37:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:18] ERROR: Sig Request With No Extention!
+[2024-09-09 10:37:18] INFO: MIME Loaded.
+[2024-09-09 10:37:18] INFO: Received GET request for ./www//farshad/images/
+[2024-09-09 10:37:18] WARNING: AutoIndex Is Off for ./www//farshad/images/
+[2024-09-09 10:37:18] OR: Sig Request With No Extention!
+[2024-09-09 10:37:18] EAD
+[2024-09-09 10:37:18] esponse Generated for socket fd: 
+[2024-09-09 10:37:18] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:18] esponse Sent for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] ERROR: Sig Request With No Extention!
+[2024-09-09 10:37:22] INFO: MIME Loaded.
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad/
+[2024-09-09 10:37:22] INFO: Index File Found: ./www//farshad//index.html
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad//index.html
+[2024-09-09 10:37:22] esponse Generated for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] esponse Sent for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:22] INFO: MIME Loaded.
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad/style.css
+[2024-09-09 10:37:22] esponse Generated for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] esponse Sent for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] ERROR: Sig Request With Unsupported Extention!
+[2024-09-09 10:37:22] INFO: MIME Loaded.
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:37:22] INFO: Received GET request for ./www//farshad/images/farshad.jpg
+[2024-09-09 10:37:22] esponse Generated for socket fd: 
+[2024-09-09 10:37:22] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:22] esponse Sent for socket fd: 
+[2024-09-09 10:37:32] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:32] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:37:42] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:42] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:37:52] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:37:52] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:38:02] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:38:02] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:38:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:38:12] WARNING: EventsNum Is Equal To 0.!
+[2024-09-09 10:38:12] INFO: Connected Sockets Cleaned!
+[2024-09-09 10:38:12] WARNING: EventsNum Is Less Than 0.!

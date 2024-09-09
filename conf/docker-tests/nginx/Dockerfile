@@ -16,6 +16,10 @@ COPY navid.com /var/www/navid.com
 COPY nico.com /var/www/nico.com
 
 # confs
+# COPY conf/farshad.conf /etc/nginx/conf.d/farshad.conf
+# COPY conf/navid.conf /etc/nginx/conf.d/navid.conf
+# COPY conf/nico.conf  /etc/nginx/conf.d/nico.conf
+
 COPY conf/farshad.conf /etc/nginx/sites-available/farshad.conf
 COPY conf/navid.conf /etc/nginx/sites-available/navid.conf
 COPY conf/nico.conf /etc/nginx/sites-available/nico.conf

@@ -1,5 +1,8 @@
-all:
+up: build
 	docker compose up -d;
+
+build:
+	docker compose build;
 
 fclean:
 	docker compose down;
@@ -21,4 +24,4 @@ fclean:
 # 	docker rm nginx;
 # 	docker rmi nginx-img;
 
-.PHONY: all fclean
+.PHONY: up fclean build

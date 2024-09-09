@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LocationConf.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:34:11 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/08/10 11:33:21 by ncasteln         ###   ########.fr       */
+/*   Updated: 2024/09/09 10:31:23 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ const std::string LocationConf::locationSettings[N_LOCATION_DIR] = {
 void LocationConf::setDefaults( void ) {
 	setSharedSettingsDefaults();
 	if (_settings.find("uri") == _settings.end()) _settings["uri"] = DEFAULT_URI;
-	if (_settings.find("methos") == _settings.end()) _settings["method"] = DEFAULT_METHOD;
+	if (_settings.find("method") == _settings.end()) _settings["method"] = DEFAULT_METHOD;
 	if (_settings.find("cgi") == _settings.end()) _settings["cgi"] = DEFAULT_CGI;
 };
 
@@ -52,18 +52,14 @@ void LocationConf::setSetting( std::string key, std::string value, context type 
 	}
 }
 
-
-
 enum conf_err LocationConf::checkSettings( void ) {
 	enum conf_err n = CONF_SUCCESS;
 
-	// check sshared
-	// n = checkSharedSettings();
+	// check shared
+	n = checkSharedSettings();
 
 	// // check specific
-	// // URI				""					: still to decide						-
-	// // CGI				""					: still to decide						-
-	// if (!isValidMethod(_settings["method"])) return (E_METHOD);
+	if (!isValidMethod(_settings["method"])) return (E_METHOD);
 
 	return (n);
 }
