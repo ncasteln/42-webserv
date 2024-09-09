@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:12:05 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/09/09 09:21:25 by nico             ###   ########.fr       */
+/*   Updated: 2024/09/09 11:11:49 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ enum conf_err {
 };
 
 enum server_err {
+	ACCEPTING_FAILED = -1,
 	NO_ERROR = 0,
-	GET_ADDR_INFO_FAILD = 200,
+	GET_ADDR_INFO_FAILED = 200,
 	SOCKET_CREATION_FAILD,
-	BIND_SOCKET_FAILD,
+	BIND_SOCKET_FAILED,
 	LISTENING_FAILED,
-	SOCKET_OPTIONS_FAILD,
-	ACCEPTING_FAILED,
+	SOCKET_OPTIONS_FAILED,
 	POLL_FAILED,
 	EVENT_ERROR,
 	CLIENTSOCKET_RECEIVE_FAILED,

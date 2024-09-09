@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 02:33:30 by nnabaeei          #+#    #+#             */
-/*   Updated: 2024/08/13 16:01:33 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:06:35 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ public:
 	~HTTPRequest( void );
 	HTTPRequest(std::map<std::string, std::string> const & serverConfig);
 
-	bool parse(); //------------------------------------------------Parse The Received Request and Create a Map
-	bool handleRequest(int clientSocket, pollfd *pollFds, size_t i, ConnectedSocket &connectedSocket); //------------------------Receive The Request From The Socket
+	bool parse(ConnectedSocket &connectedSocket); //------------------------------------------------Parse The Received Request and Create a Map
+	bool handleRequest(int connectedSocketFd, pollfd *pollFds, size_t i, ConnectedSocket &connectedSocket); //------------------------Receive The Request From The Socket
 	std::map<std::string, std::string> const & getRequestMap();
 	std::string const & getRequestString() const;
 	void setServerConfig(std::map<std::string, std::string> const & serverConfig);
@@ -56,8 +56,16 @@ public:
 	std::map<std::string, std::string> &getServerConfig(void);
 
 	void displayRequestString() const;
-	void displayRequestMap();
-	void displayServerConfig();
+	void printRequestMap();
+	void printServerConfig();
+	bool receiveInChuncks(ConnectedSocket &connectedSocket, pollfd *pollFds, size_t i, std::ostringstream const &outputStringStream);
+	void readAllHeader(ConnectedSocket &connectedSocket, pollfd *pollFds, size_t i);
+	void storeHeader(ConnectedSocket &connectedSocket);
+	bool isHeaderReceived(std::string buffer);
+	void readAllBody(ConnectedSocket &connectedSocket, pollfd *pollFds, size_t i, std::ostringstream const &outputStringStream);
+	std::string extractContentLength(std::string request);
+	std::string extractBody(std::string request);
+	std::string extractHeader(std::string request);
 
 
 private:

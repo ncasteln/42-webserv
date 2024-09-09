@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:10:43 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/16 23:49:23 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/03 19:04:16 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@
 #include "HttpRequest.hpp"
 
 #define MAX_CONNECTIONS 130
+#define CGI_TIMEOUT 10
+#define MAX_CGI_CHILD_PROCESSES 5
 
 class Server
 {
@@ -59,7 +61,7 @@ private:
 	std::string readHtmlFile(std::string path);
 
 public:
-	Server(std::map<std::string, std::string> settings);
+	Server(std::map<std::string, std::string> settings, std::vector<LocationConf> const &locations);
 	~Server(void);
 	Server(const Server &other);
 

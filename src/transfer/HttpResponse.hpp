@@ -6,7 +6,7 @@
 /*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 00:45:08 by nnavidd           #+#    #+#             */
-/*   Updated: 2024/08/16 20:27:14 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/08 21:47:42 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,49 +37,70 @@
 # include <unistd.h>
 # include <cerrno>
 # include <poll.h>
+# include <signal.h>
 # include "colors.h"
 # include "errors.h"
-# include "Post.hpp"
 # include "ConnectedSocket.hpp"
 # include "HttpRequest.hpp"
+# include "LocationConf.hpp"
 
+# define VALID_EXTENSIONS_NUM 2
 
 enum POLLEvents {
 	POLLIN_TMP  = 0,
 	POLLOUT_TMP = 1,
 };
 
-class GetHandler; // Forward declaration
+
+class Get; // Forward declaration
 
 class HTTPResponse {
 public:
 	HTTPResponse();
 	HTTPResponse(std::map<std::string, std::string> const & serverConfig);
+	HTTPResponse(std::map<std::string, std::string> const & serverConfig, std::vector<LocationConf> const &locations);
 	virtual ~HTTPResponse();
-
-	std::string getResponse(int const clientSocket); //---------------------------------------------------Return Error Or Call The Related HTTP Methods
+	 //---------------------------------------------------Return Error Or Call The Related HTTP Methods
 	bool handleResponse(int clientSocket, int const &pollEvent, pollfd *pollFds, size_t i, ConnectedSocket &connectedSocket); //
-	void displayResponse(int fd);
+	void printSocketResponse(int fd);
 	void setRequestMapInResponse(std::map<std::string, std::string> const & requestMap);
 	void setRequestStringInResponse(std::string const & requestString);
-    void displayRequestMap();
-	void displayServerConfig();
+	void printRequestMap();
+	void printServerConfig();
 	bool isDirectory(const std::string& uri) const;
-	//-------------------------------MIME------------------------------
-    std::string getMimeType(const std::string& extension) const;
+	bool isFile(std::string const & filePath);
+	void fixUri(std::string const &filePath);
 
+
+	//-------------------------------MIME------------------------------
+	std::string getMimeType(const std::string& extension) const;
+	//-----------------------------------------------------------------
+
+	std::string getResponse(int const clientSocket, ConnectedSocket &connectedSocket);
+	std::string const &getSocketResponse(int connectedSocketFd);
+	void printData(void);
+	void printResponsesMap(void);
+	void removeSocketResponse(int connectedSocketFd);
+	void clearData(void);
+	std::string getSubStringFromMiddleToIndex(std::string &string, std::string const &toFind, size_t startOffset, size_t endIndex);
+	std::string getSubStringFromStartToIndex(std::string &string, std::string const &toFind);
+
+	void setResponseForAConnectedSocket(std::string const &response, int connectedSocketFd);
 	//-------------------------------ERROR-----------------------------
 	std::string generateDefaultErrorPage(int statusCode, std::string const & message);
 	std::string generateErrorPage(int statusCode);
 	std::string generateErrorHeaders(int statusCode, size_t contentLength);
+	//-----------------------------------------------------------------
 
 
 	friend class HTTPRequest;
 
 protected:
-	std::string createHandleGet();
-	std::string createHandlePost(int const clientSocket);
-	std::string createHandleDelete();
+	std::string const &getStorageDirectory(void) const;
+
+	std::string createHandleGet(ConnectedSocket &connectedSocket);
+	std::string createHandlePost(int const connectedSocketFd, ConnectedSocket &connectedSocket, std::map<std::string, std::string> &serverConfig);
+	std::string createHandleDelete(ConnectedSocket &connectedSocket);
 	std::string httpStatusCode(int statusCode);
 	std::string readBinaryFile(const std::string& path);
 	std::string readHtmlFile(const std::string& path);
@@ -90,30 +111,72 @@ protected:
 	std::string generateGeneralHeaders(std::string & filePath);
 
 	//-------------------------------CGI-------------------------------
-	bool isCGI(std::string const & filePath);
-	std::string const handleCGI(std::string & uri);
-	std::string cgi( std::string& uri );
-	char** createEnv( std::string * uri );
-	size_t acceptedCgiExtention(std::string const &filePath);
-	std::string readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int timeout);
+	// bool isCGI(std::string const & filePath);
+	// std::string const handleGETCgi(ConnectedSocket &connectedSocket);
+	// std::string cgi( std::string& uri );
+	// char** createEnv( std::string * uri );
+	// size_t acceptedCgiExtention(std::string const &filePath);
+	// std::string readFromCGI(int fd_pipe[2], pid_t forked_ps, char** env, int timeout);
+	// std::map<std::string, std::string> addAdditionalEnvVariables(std::string * uri);
+	//-----------------------------------------------------------------
 
 
 	std::string getCurrentTime();
 	std::string formatTimeHTTP(std::time_t rawTime);
-	//-----------------------------------------------------------------
+
+
+
+	std::string handleCgi(ConnectedSocket &connectedSocket);
+	ChildProcessData createPipeAndFork(ConnectedSocket &connectedSocket);
+	bool findScript(ConnectedSocket &connectedSocket, std::string &uri);
+	// std::string findCommand(std::string const &command);
+	void cgiError(ConnectedSocket &connectedSocket);
+	void handleCgiChildProcess(ConnectedSocket &connectedSocket, int pipeFds[2]);
+	void handleCgiMainProcess(ConnectedSocket &connectedSocket, int pipeFds[2], pid_t id);
+	void UpdateCgiProperties(ConnectedSocket &connectedSocket, pid_t id, int pipeFds[2], bool isError);
+	bool isCgiUri(ConnectedSocket &connectedSocket);
+	void storeKeyValuePairsOfQueryString(void);
+	void resetCgiProperties(void);
+	void printQueryStringKeyValues(void);
+	char **getEnv(void);
+	void printEnv(char **env);
+	bool isScriptExtensionValid(ConnectedSocket &connectedSocket);
+	std::string getScriptExtension(ConnectedSocket &connectedSocket);
+	void deleteChildProcessMemory(char **env);
 
 
 	std::map<std::string, std::string> _serverConfig; //-------------------------------------------------Keep A Reference Of Server Config Map
 	std::map<std::string, std::string> _requestMap; //---------------------------------------------------Keep A Reference Of Request Map
 	std::string	_requestString; //-----------------------------------------------------------------------Keep A Reference Of Request String
 	std::map<int, std::string> _responses; //------------------------------------------------------------A Map Of Responses Corresponding To Their Sockets
+	
 	//-------------------------------MIME------------------------------
-    std::map<std::string, std::string> _mimeMap;
-
-    void loadMimeTypes(const std::string& filePath);
+	std::map<std::string, std::string> _mimeMap;
+	void loadMimeTypes(const std::string& filePath);
 	//-----------------------------------------------------------------
-	private:
-		Post _post;
+
+	std::string _storageDirectory;
+	std::map<std::string, std::string> _data;
+	
+	std::string splitLocationFromUri(const std::string& path);
+	std::string const getLocationMethod(std::string const & uri);
+	std::string const getLocationIndex(std::string const & uri);
+
+	std::vector<LocationConf> _locations;
+	void setMethods(void);
+	void printMethods(void);
+	void setIndexes(void);
+	void printIndexes(void);
+	std::map<std::string, std::string> _methods;
+	std::map<std::string, std::string> _indexes;
+	
+	std::string _cgiDirectory;
+	std::string _cgiFilePath;
+	std::string _cgiFileName;
+	std::string _queryString;
+	std::vector<std::string> _queryStringKeyValues;
+
+
 };
 
 #endif // HTTPRESPONSE_HPP

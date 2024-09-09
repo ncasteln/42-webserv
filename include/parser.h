@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 12:03:53 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/09/09 10:19:42 by nico             ###   ########.fr       */
+/*   Updated: 2024/09/09 11:19:59 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@
 #define DEFAULT_FILE_PATH		"./conf/default.conf"
 
 /* NUMBER OF DIRECTIVES */
-#define N_SHARED_DIR	5
+#define N_SHARED_DIR	6
 #define N_SERVER_DIR	3
-#define N_LOCATION_DIR	3
+#define N_LOCATION_DIR	5
 
 /* SHARED DIRECTIVE DEFAULTS */
 #define DEFAULT_TIMEOUT			"10"
 #define DEFAULT_CLIENT_SIZE		"80"
-#define DEFAULT_INDEX			"index.html"
-#define DEFAULT_AUTOINDEX		"off"
+#define DEFAULT_INDEX			"index index.htm index.html default.html"
+#define DEFAULT_AUTOINDEX		"on"
 #define DEFAULT_ROOT			"./www/"
+#define DEFAULT_MAX_BODY_SIZE "100000000"
 
 /* SERVER DIRECTIVE DEFAULTS */
 #define DEFAULT_SERVER_NAME		"127.0.0.1"
@@ -45,6 +46,7 @@
 #define DEFAULT_URI				"/"
 #define DEFAULT_METHOD			"GET"
 #define DEFAULT_CGI				""
+#define DEFAULT_REDIRECT		""
 
 #define	SPACES				" \t\v\f\r"
 #define	COMMENT(c)			((c) == '#')

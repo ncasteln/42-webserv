@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:34:11 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/09/09 10:31:23 by nico             ###   ########.fr       */
+/*   Updated: 2024/09/09 11:17:18 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ LocationConf& LocationConf::operator=( const LocationConf& rhs ) {
 const std::string LocationConf::locationSettings[N_LOCATION_DIR] = {
 	"uri",
 	"method",
-	"cgi"
+	"cgi",
+	"redirect",
+	"index",
 };
 
 void LocationConf::setDefaults( void ) {
@@ -35,6 +37,8 @@ void LocationConf::setDefaults( void ) {
 	if (_settings.find("uri") == _settings.end()) _settings["uri"] = DEFAULT_URI;
 	if (_settings.find("method") == _settings.end()) _settings["method"] = DEFAULT_METHOD;
 	if (_settings.find("cgi") == _settings.end()) _settings["cgi"] = DEFAULT_CGI;
+	if (_settings.find("redirect") == _settings.end()) _settings["redirect"] = DEFAULT_REDIRECT;
+	if (_settings.find("index") == _settings.end()) _settings["index"] = DEFAULT_INDEX;
 };
 
 void LocationConf::addNestedBlock( context type ) { (void)type; /* not implemented */}
@@ -72,4 +76,11 @@ void LocationConf::displaySettings( void ) const {
 		it++;
 	}
 	std::cout << std::endl;
+}
+
+std::string LocationConf::getASettingValue(std::string key) {
+	if (this->_settings.find(key) != this->_settings.end()) {
+		return this->_settings[key];
+	}
+	return "";
 }

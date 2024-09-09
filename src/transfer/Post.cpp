@@ -3,28 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Post.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 08:29:21 by fahmadia          #+#    #+#             */
-/*   Updated: 2024/08/09 17:51:11 by fahmadia         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:09:03 by nnabaeei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Post.hpp"
+#include "Server.hpp"
 
-Post::Post(void) : _responses(std::map<int, std::string>()), _postData(std::map<std::string, std::string>()) {
+Post::Post(void) : HTTPResponse(), _isFileSaved(true) {
+	this->_cgiDirectory = "/cgi-post/";
 	return;
 }
 
-Post::Post(Post const &other) : _responses(other._responses), _postData(other._postData) {
+Post::Post(Post const &other) : HTTPResponse(other) {
+	this->_cgiDirectory = other._cgiDirectory;
 	return;
 }
 
 Post &Post::operator=(Post const &rhs) {
-	if (this != &rhs)
-	{
-		this->_responses = rhs._responses;
-		this->_postData = rhs._postData;
+	if (this != &rhs) {
+		this->_isFileSaved = rhs._isFileSaved;
+		this->_cgiDirectory = rhs._cgiDirectory;
 	}
 	return *this;
 }
@@ -33,34 +35,13 @@ Post::~Post(void) {
 	return;
 }
 
-std::map<int, std::string> &Post::getResponses(void) {
-	return this->_responses;
-}
-
-std::map<std::string, std::string> &Post::getPostData(void) {
-	return this->_postData;
-}
-
-std::string Post::getSubStringFromMiddleToIndex(std::string &string, std::string const &toFind, size_t startOffset, size_t endIndex) {
-	size_t foundIndex = string.find(toFind);
-	if (foundIndex == std::string::npos)
-		return "";
-	std::string result = string.substr(foundIndex + startOffset, endIndex);
-	return result;
-}
-
-std::string Post::getSubStringFromStartToIndex(std::string &string, std::string const &toFind) {
-	size_t foundIndex = string.find(toFind);
-	if (foundIndex == std::string::npos)
-		return "";
-	std::string result = string.substr(0, foundIndex);
-	return result;
-}
-
 std::string Post::getDelimiter(std::string request) {
 	
 	std::string toFind = "Content-Type";
 	std::string result = getSubStringFromMiddleToIndex(request, toFind, 0, std::string::npos);
+
+	if (result.empty())
+		return "";
 
 	toFind = "boundary=";
 	size_t sizeOfToFind = toFind.size();
@@ -74,11 +55,11 @@ std::string Post::getDelimiter(std::string request) {
 	return formFieldsDelimiter;
 }
 
-std::string Post::getBody(std::string request) {
-	std::string toFind = "\r\n\r\n";
-	std::string body = getSubStringFromMiddleToIndex(request, toFind, toFind.size(), std::string::npos);
-	return body;
-}
+// std::string Post::getBody(std::string request) {
+// 	std::string toFind = "\r\n\r\n";
+// 	std::string body = getSubStringFromMiddleToIndex(request, toFind, toFind.size(), std::string::npos);
+// 	return body;
+// }
 
 std::string Post::getName(std::string string) {
 	// std::cout << "contentDisposition = " << string << std::endl;
@@ -88,7 +69,7 @@ std::string Post::getName(std::string string) {
 	toFind = "\r\n";
 	std::string name = getSubStringFromStartToIndex(string, toFind);
 	// std::cout << "name = " << name << std::endl;
-	this->_postData["name"] = name;
+	this->_data["name"] = name;
 	return name;
 }
 
@@ -100,13 +81,26 @@ std::string Post::getFileName(std::string string) {
 	if (fileNameAttribute.empty())
 		return "";
 
-	std::string fileName = fileNameAttribute.substr(toFind.length(), fileNameAttribute.find_last_of('"') - toFind.length());
-	this->_postData["filename"] = fileName;
+	std::string removeFromLast = "\"";
+	std::string lineFeed = "\r\n";
+	size_t lineFeedIndex = fileNameAttribute.find("\r\n");
+	std::string fileName = "";
+	if (lineFeedIndex != std::string::npos)
+		fileName = fileNameAttribute.substr(toFind.length(), fileNameAttribute.find("\r\n") - toFind.length() - removeFromLast.length());
+	this->_data["filename"] = fileName;
 	return fileName;
 }
 
 void Post::saveFile(std::string string) {
-	std::string fileName = this->_postData["filename"];
+	// std::string storageDirectory = "files/";
+	DIR *directory;
+	if (!(directory = opendir(this->getStorageDirectory().c_str()))) {
+		this->_isFileSaved = false;
+		return;
+	}
+	closedir(directory);
+
+	std::string fileName = this->getStorageDirectory() + "/" + this->_data["filename"];
 	std::ofstream outputFileStream(fileName.c_str(), std::ios::binary);
 
 	std::string toFind = "\r\n\r\n";
@@ -143,13 +137,17 @@ void Post::getSubmitedData(std::string &contentDisposition) {
 	if (nameValue == "file")
 	{
 		getFileName(nameAttribute);
-		if (!(this->_postData["filename"].empty()) && !(this->_postData["name"].empty()))
+		if (!(this->_data["filename"].empty()) && !(this->_data["name"].empty()))
 			saveFile(nameAttribute);
 	}
 	return;
 }
 
 void Post::getSubmittedFormInputs(std::string body, std::string formFieldsDelimiter) {
+
+	if (formFieldsDelimiter.empty())
+		return;
+
 	while (body.size())
 	{
 		std::string toFind = "Content-Disposition";
@@ -177,48 +175,64 @@ void Post::getSubmittedFormInputs(std::string body, std::string formFieldsDelimi
 	return;
 }
 
-void Post::parsePostRequest(std::string request) {
+void Post::parsePostRequest(std::string const &requestHeader, std::ostringstream const &requestBody) {
 
-	std::string formFieldsDelimiter = this->getDelimiter(request);
-	std::string body = this->getBody(request);
-	std::cout << "body:\n" << body << std::endl;
+	std::string formFieldsDelimiter = this->getDelimiter(requestHeader);
+	std::string body = requestBody.str();
+	// std::cout << "body:\n" << body << std::endl;
 	this->getSubmittedFormInputs(body, formFieldsDelimiter);
 }
 
-void Post::handlePost(std::string request, int connectedSocketFd) {
+std::string Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket, std::map<std::string, std::string> &serverConfig) {
 
-	// std::cout << "POST REQUEST = \n" << request << std::endl;
-	size_t index = request.find("Content-Type: multipart/form-data");
-	if (index == std::string::npos) {
+	size_t maxBodySize = static_cast<size_t>(Server::stringToInt(serverConfig["client_max_body_size"]));
+
+	if (connectedSocket.getRequestBody().str().length() > maxBodySize) {
+		this->_responses[connectedSocketFd] = generateErrorPage(413);
+		// std::cout << "******************** BODY IS TOO BIG ********************" << connectedSocket.getRequestBody().str().length() << std::endl;
+		return(this->_responses[connectedSocketFd]);
+	} else {
+		// std::cout << "******************** BODY IS NOT TOO BIG ********************" << connectedSocket.getRequestBody().str().length() << std::endl;
+	}
+
+	if (isCgiUri(connectedSocket)) {
+		std::string response = this->handleCgi(connectedSocket);
+		return response;
+	}
+
+
+
+	if (connectedSocket.getRequestMap()["Content-Type"] == "plain/text") {
+
+		std::string html = "<html><body><h1>" + connectedSocket.getRequestBody().str() + "</h1><a href=\"index.html\">Back to Homepage</a></body></html>";
 		std::ostringstream ostring;
-		ostring << "HTTP/1.1 400 Bad Request\r\n";
-		ostring << "Connection: close\r\n\r\n";
-		this->_responses[connectedSocketFd] = ostring.str(); 
-		// this->printPostData();
-		std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
-		return;
-}
-
-	parsePostRequest(request);
-
-	std::cout << "name = " << this->_postData["name"] << "filename = " << this->_postData["filename"] << std::endl;
-
-	if (this->_postData["name"].empty() || this->_postData["filename"].empty()) {
-		std::string html = "<html><body><h1>Something went wrong</h1></body></html>";
-		std::ostringstream ostring;
-		ostring << "HTTP/1.1 500 Internal Server Error\r\n";
+		ostring << "HTTP/1.1 200 OK\r\n";
 		ostring << "Content-Type: text/html\r\n";
 		ostring << "Connection: close\r\n";
 		ostring << "Content-Length: " << html.length() << "\r\n\r\n";
 		ostring << html;
-		this->_responses[connectedSocketFd] = ostring.str(); 
-		// this->printPostData();
-		std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
-		return;
-}
+		this->_responses[connectedSocketFd] = ostring.str();
+		return (this->_responses[connectedSocketFd]);
 
-	std::string message = "Thank you " + this->_postData["name"] + ", file " + this->_postData["filename"] + " is Received.";
-	std::string html = "<html><body><h1>" + message + "</h1><a href=\"index.html\">Back to Homepage</a></body></html>";
+	}
+
+	if (connectedSocket.getRequestMap()["uri"] != "/submit") {
+		this->_responses[connectedSocketFd] = generateErrorPage(400);
+		return (this->_responses[connectedSocketFd]);
+	}
+	parsePostRequest(connectedSocket.getRequestHeader(), connectedSocket.getRequestBody());
+	std::cout << "name = " << this->_data["name"] << ", filename = " << this->_data["filename"] << std::endl;
+	if (this->_data["name"].empty() || this->_data["filename"].empty()) {
+		this->_responses[connectedSocketFd] = generateErrorPage(400);
+		return (this->_responses[connectedSocketFd]);
+	}
+	if (!this->_isFileSaved)
+	{
+		this->_responses[connectedSocketFd] = generateErrorPage(500);
+		return (this->_responses[connectedSocketFd]);
+	}
+	std::string message = "Thank you " + this->_data["name"] + ", file " + this->_data["filename"] + " is Received, and Stored in" + this->_storageDirectory +".";
+	std::string html = "<html><body><h1>" + message + "</h1><a href=\"form/index.html\">Back</a></body></html>";
 	std::ostringstream ostring;
 	ostring << "HTTP/1.1 200 OK\r\n";
 	ostring << "Content-Type: text/html\r\n";
@@ -226,40 +240,93 @@ void Post::handlePost(std::string request, int connectedSocketFd) {
 	ostring << "Content-Length: " << html.length() << "\r\n\r\n";
 	ostring << html;
 	this->_responses[connectedSocketFd] = ostring.str();
-	std::cout << CYAN << "POST RESPONSE:\n" << this->_responses[connectedSocketFd] << RESET << std::endl;
-	this->printPostData();
-	this->printPostResponses();
-	return;
+	return (this->_responses[connectedSocketFd]);
 }
+// void Post::handlePost(int connectedSocketFd, ConnectedSocket &connectedSocket) {
 
-void Post::printPostData(void) {
-	if (!_postData.size())
-	{
-		std::cout << YELLOW << "POST DATA IS EMPTY" << RESET << std::endl;
-		return;
-	}
+// 	// std::cout << "POST REQUEST = \n" << request << std::endl;
 
-	std::map<std::string, std::string>::iterator iterator = this->_postData.begin();
+// 	// size_t index = connectedSocket.getRequestHeader().find("Content-Type: multipart/form-data");
+// 	// if (index == std::string::npos) {
+// 	// 	std::ostringstream ostring;
+// 	// 	ostring << "HTTP/1.1 400 Bad Request\r\n";
+// 	// 	ostring << "Connection: close\r\n\r\n";
+// 	// 	this->_responses[connectedSocketFd] = ostring.str(); 
+// 	// 	// this->printPostData();
+// 	// 	std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
+// 	// 	return;
+// 	// }
 
-	std::cout << YELLOW << "DATA RECEIVED FROM FORM SUBMISSION:" << RESET <<std::endl;
+// 	if (connectedSocket.getRequestMap()["uri"] != "/submit") {
+		
+// 		std::string html = "<html><body><h1>Bad Request</h1></body></html>";
+// 		std::ostringstream ostring;
+// 		ostring << "HTTP/1.1 400 Bad Request\r\n";
+// 		ostring << "Content-Type: text/html\r\n";
+// 		ostring << "Connection: close\r\n";
+// 		ostring << "Content-Length: " << html.length() << "\r\n\r\n";
+// 		ostring << html;
+// 		this->_responses[connectedSocketFd] = ostring.str(); 
+// 		// this->printPostData();
+// 		std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
+// 		return;
+// 	}
 
-	while (iterator != this->_postData.end())
-	{
-		std::cout << YELLOW << iterator->first << ": " << iterator->second << RESET << std::endl;
-		iterator++;
-	}
-}
+// 	parsePostRequest(connectedSocket.getRequestHeader(), connectedSocket.getRequestBody());
 
-void Post::printPostResponses(void) {
-	if (!this->_responses.size())
-	{
-		std::cout << BLUE << "POST RESPONSES MAP IS EMPTY" << RESET << std::endl;
-		return;
-	}
-	std::map<int, std::string>::iterator iterator;
-	std::map<int, std::string>::iterator iteratorEnd = this->_responses.end();
+// 	std::cout << "name = " << this->_data["name"] << ", filename = " << this->_data["filename"] << std::endl;
 
-	for (iterator = this->_responses.begin(); iterator != iteratorEnd; iterator++)
-	std::cout << BLUE << "Connected socket [" << iterator->first << "] sends the respons:\n" << iterator->second << RESET << std::endl;
-	return;
-}
+// 	if (this->_data["name"].empty() || this->_data["filename"].empty()) {
+// 		std::string html = "<html><body><h1>Something went wrong</h1></body></html>";
+// 		std::ostringstream ostring;
+// 		ostring << "HTTP/1.1 400 Bad Request\r\n";
+// 		ostring << "Content-Type: text/html\r\n";
+// 		ostring << "Connection: close\r\n";
+// 		ostring << "Content-Length: " << html.length() << "\r\n\r\n";
+// 		ostring << html;
+// 		this->_responses[connectedSocketFd] = ostring.str(); 
+// 		// this->printPostData();
+// 		std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
+// 		return;
+// 	}
+
+// 	if (!this->_isFileSaved)
+// 	{
+// 		std::string html = "<html><body><h1>500 Internal Server Error</h1></body></html>";
+// 		std::ostringstream ostring;
+// 		ostring << "HTTP/1.1 500 Internal Server Error\r\n";
+// 		ostring << "Content-Type: text/html\r\n";
+// 		ostring << "Connection: close\r\n";
+// 		ostring << "Content-Length: " << html.length() << "\r\n\r\n";
+// 		ostring << html;
+// 		this->_responses[connectedSocketFd] = ostring.str(); 
+// 		// this->printPostData();
+// 		std::cout << RED << "RESPONSE:\n" << ostring.str() << RESET << std::endl;
+// 		return;
+// 	}
+
+// 	std::string message = "Thank you " + this->_data["name"] + ", file " + this->_data["filename"] + " is Received.";
+// 	std::string html = "<html><body><h1>" + message + "</h1><a href=\"index.html\">Back to Homepage</a></body></html>";
+// 	std::ostringstream ostring;
+// 	ostring << "HTTP/1.1 200 OK\r\n";
+// 	ostring << "Content-Type: text/html\r\n";
+// 	ostring << "Connection: close\r\n";
+// 	ostring << "Content-Length: " << html.length() << "\r\n\r\n";
+// 	ostring << html;
+// 	this->_responses[connectedSocketFd] = ostring.str();
+// 	// std::cout << CYAN << "POST RESPONSE:\n" << this->_responses[connectedSocketFd] << RESET << std::endl;
+// 	// this->printData();
+// 	// this->printResponsesMap();
+// 	return;
+// }
+
+
+
+
+// std::string Post::findCommand(std::string const &command) {
+// 	(void)command;
+// 	return "";
+// }
+
+
+

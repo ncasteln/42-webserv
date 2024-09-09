@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 11:35:44 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/09/09 09:53:22 by nico             ###   ########.fr       */
+/*   Updated: 2024/09/09 11:15:14 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ bool isValidMethod( std::string s ) {
 	while (s.find_first_of(" \t\v\f\r") != std::string::npos) {
 		space_pos = s.find_first_of(" \t\v\f\r");
 		method = s.substr(0, space_pos);
-		if (method != "GET" && method != "POST" && method != "DELETE")
+		if (method != "GET" && method != "POST" && method != "DELETE" && method != "HEAD")
 			return (false);
 		s.erase(0, space_pos + 1);
 		ltrim(s, " \t\v\f\r");
 	}
-	if (s != "GET" && s != "POST" && s != "DELETE")
+	if (s != "GET" && s != "POST" && s != "DELETE" && s != "HEAD")
 		return (false);
 	return (true);
 }

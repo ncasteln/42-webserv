@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Poll.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnabaeei <nnabaeei@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fahmadia <fahmadia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:54:45 by ncasteln          #+#    #+#             */
-/*   Updated: 2024/08/10 11:54:58 by nnabaeei         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:37:03 by fahmadia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ public:
 	void init(void);
 	void start(void);
 	nfds_t mapConnectedSocketFdToPollFd(int connectedSocketFd);
-	void cleanConnectedSockets(int counter);
+	void cleanConnectedSockets(void);
+
+	int static cgiChildProcessNum;
 
 private:
 	std::vector<Server> _serverList;
@@ -40,8 +42,8 @@ private:
 	bool mergeServerWithSamePort(std::map<std::string, std::string> serverConf);
 	void initFds(void);
 
-	void handleEvent(int counter);
-	void handleListeningEvent(size_t i, Server &s, int counter);
+	void handleEvent(void);
+	void handleListeningEvent(size_t i, Server &s);
 	void handleConnectedEvent(int i, Server &s, std::map<int, ConnectedSocket>::iterator *connectedSocketIt);
 	void addConnectedSocketToMonitoredList(int connectedSocketFd);
 	void removeClosedSocketsFromMap(Server &s);
@@ -52,6 +54,10 @@ private:
 	bool receiveRequest(Server &s, size_t i, int connectedSocketFd, std::map<int, ConnectedSocket>::iterator *connectedSocketIt);
 	void sendResponse(Server &s, size_t i, int connectedSocketFd, std::map<int, ConnectedSocket>::iterator *connectedSocketIt);
 	void closeTimedoutSockets(nfds_t pollNum, ConnectedSocket &connectedSocket);
+	std::string waitForCgiResponse(ConnectedSocket &connectedSocket, Server &s);
+	void finishCgi(ConnectedSocket &connectedSocket, Server &s, std::string const &response);
+	std::string cgiChildProcessSuccess(ConnectedSocket &connectedSocket, Server &s);
+	std::string cgiChildProcessFail(ConnectedSocket &connectedSocket, Server &s);
 
 	// UN-USED CONSTRUCTORS
 	Poll(void);
